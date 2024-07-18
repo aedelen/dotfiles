@@ -1,0 +1,28 @@
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 40.0
+
+[font.bold]
+family = "CommitMono Nerd Font Propo"
+style = "Bold"
+
+[font.bold_italic]
+family = "CommitMono Nerd Font Propo"
+style = "Bold Italic"
+
+[font.italic]
+family = "CommitMono Nerd Font Propo"
+style = "Italic"
+
+[font.normal]
+family = "CommitMono Nerd Font Propo"
+style = "Regular"
+
+[cursor]
+style = "Underline"
