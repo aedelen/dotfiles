@@ -110,8 +110,8 @@ bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:"
-set $ws2 "2:"
+set $ws1 "1: Neovim"
+set $ws2 "2: Firefox"
 set $ws3 "3:Communications"
 set $ws4 "4"
 set $ws5 "5"
@@ -184,3 +184,21 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+
+## Screenshots
+set $screenshot_path  "/home/$USER/Pictures/Screenshots/$(date).png"
+bindsym Print exec --no-startup-id maim $screenshot_path
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) $screenshot_path
+bindsym Shift+Print exec --no-startup-id maim --select $screenshot_path
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+## Brightness Control
+bindsym XF86MonBrightnessUp exec sudo light -A 5
+bindsym XF86MonBrightnessDown exec sudo light -U 5
+bindsym shift+XF86MonBrightnessUp exec sudo light -A 25
+bindsym shift+XF86MonBrightnessDown exec sudo light -U 25
