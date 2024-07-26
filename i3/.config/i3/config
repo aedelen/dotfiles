@@ -112,7 +112,7 @@ bindsym $mod+d focus child
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Neovim"
 set $ws2 "2: Firefox"
-set $ws3 "3:Communications"
+set $ws3 "3:󰚇 Communications"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -202,3 +202,6 @@ bindsym XF86MonBrightnessUp exec sudo light -A 5
 bindsym XF86MonBrightnessDown exec sudo light -U 5
 bindsym shift+XF86MonBrightnessUp exec sudo light -A 25
 bindsym shift+XF86MonBrightnessDown exec sudo light -U 25
+
+## Enable automatic light / dark system theme
+exec --no-startup-id /usr/lib/gsd-xsettings
