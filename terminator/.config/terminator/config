@@ -17,6 +17,15 @@
     show_titlebar = False
     palette = "#202746:#c94922:#ac9739:#c08b30:#3d8fd1:#6679cc:#22a2c9:#979db4:#6b7394:#c76b29:#293256:#5e6687:#898ea4:#dfe2f1:#9c637a:#f5f7ff"
     use_system_font = False
+  [[Catppuccin_Latte]]
+    background_color = "#eff1f5"
+    cursor_color = "#dc8a78"
+    cursor_color_fg = False
+    font = CommitMono Nerd Font 14
+    foreground_color = "#4c4f69"
+    show_titlebar = False
+    palette = "#5c5f77:#d20f39:#40a02b:#df8e1d:#1e66f5:#ea76cb:#179299:#acb0be:#6c6f85:#d20f39:#40a02b:#df8e1d:#1e66f5:#ea76cb:#179299:#bcc0cc"
+    use_system_font = False
 [layouts]
   [[default]]
     [[[window0]]]
