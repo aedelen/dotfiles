@@ -204,3 +204,6 @@ bindsym shift+XF86MonBrightnessDown exec sudo light -U 25
 
 ## Enable automatic light / dark system theme
 exec --no-startup-id /usr/lib/gsd-xsettings
+
+## Set desktop background
+exec_always feh --bg-scale --no-fehbg $HOME/.config/i3/backgrounds/animeHouse.jpg
