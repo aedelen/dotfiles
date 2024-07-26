@@ -51,7 +51,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -206,4 +206,11 @@ bindsym shift+XF86MonBrightnessDown exec sudo light -U 25
 exec --no-startup-id /usr/lib/gsd-xsettings
 
 ## Set desktop background
-exec_always feh --bg-scale --no-fehbg $HOME/.config/i3/backgrounds/animeHouse.jpg
+exec_always feh --bg-fill --no-fehbg $HOME/.config/i3/backgrounds/animeHouse.jpg
+## blue background
+#exec_always xsetroot -solid "#000059"
+
+# start rofi (a program launcher)
+bindsym $mod+shift+space exec --no-startup-id rofi -show drun
+bindsym $mod+space exec --no-startup-id rofi -show combi
+bindsym $mod+Tab exec --no-startup-id rofi -show window
