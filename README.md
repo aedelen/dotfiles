@@ -22,7 +22,7 @@ Run ansible playbooks in PC_Setup
 ```bash
     fc-list :lang=en:style=Regular family|sort|more
 ```
-## Brightness controlls
+## Brightness controls
 ```sudo touch /etc/sudoers.d/brightness```
 
 add the folloing line to it
