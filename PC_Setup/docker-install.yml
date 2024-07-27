@@ -1,0 +1,47 @@
+- name: install docker
+  hosts: ubuntu
+  become: yes
+  tasks:
+    - name: Install Dependencies
+      ansible.builtin.apt:
+        name: 
+          - ca-certificates
+          - curl
+        state: "present"
+        update_cache: true
+    - name: Add Docker repo using key from URL
+      deb822_repository:
+        name: docker
+        uris: https://download.docker.com/linux/ubuntu
+        signed_by: https://download.docker.com/linux/ubuntu/gpg
+        components: 
+          - stable
+        suites: 'jammy'
+        architectures: amd64
+    - name: Install Docker
+      ansible.builtin.apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-buildx-plugin
+          - docker-compose-plugin
+        state: "present"
+        update_cache: true
+    - name: Ensure group "docker" exists
+      ansible.builtin.group:
+        name: docker
+        state: present
+    - name: Add 'adam' to the docker group
+      ansible.builtin.user:
+        name: adam
+        groups: docker
+        append: yes
+    - name: Start docker.service on boot
+      ansible.builtin.systemd_service:
+        name: docker.service
+        enabled: true
+    - name: Start containerd.service on boot
+      ansible.builtin.systemd_service:
+        name: containerd.service
+        enabled: true

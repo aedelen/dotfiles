@@ -1,0 +1,42 @@
+- hosts: "ubuntu"
+  become: yes
+  tasks:
+    - name: Install UI
+      apt:
+        name:
+          - sway
+          - i3
+          - light
+          - tlp
+          - fonts-powerline
+          - vlc
+          - polybar
+          - rofi
+          - feh
+        state: present
+    - name: Install FastFetch PPA
+      ansible.builtin.apt_repository:
+        repo: ppa:zhangsongcui3371/fastfetch
+        state: present
+    - name: Install Dev Tools
+      apt:
+        name:
+          - alacritty
+          - terminator
+          - zsh
+          - fastfetch
+          - openjdk-18-jdk
+          - openjdk-8-jdk
+          - openjdk-11-jdk
+          - stow
+          - ripgrep
+          - htop
+          - maim
+          - maven
+        state: present
+        update_cache: yes
+    - name: Install Communications
+      apt:
+        name:
+          - thunderbird
+        state: present
