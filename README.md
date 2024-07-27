@@ -40,6 +40,10 @@ git-credential-manager configure
 Determine name of keyboard key
 ``` xev ```
 
+### WIFI
+Open terminal ui to manage wifi connection
+```nmtui```
+
 # Stuff to automate
 - [x] add instructions to install Ansible
 - [ ] install Neovim
