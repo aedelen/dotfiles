@@ -1,0 +1,13 @@
+[user]
+	email = aedelen42@gmail.com
+	name = Adam
+[credential]
+	credentialStore = secretservice
+[core]
+	editor = nvim
+[difftool]
+    prompt = true
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
