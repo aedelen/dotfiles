@@ -6,6 +6,7 @@ sudo apt install software-properties-common
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
+Run ansible playbooks in PC_Setup
 ## Nerd Fonts
 1. Download font [from here](https://www.nerdfonts.com/font-downloads)
 2. unzip into ~/.fonts
