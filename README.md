@@ -53,5 +53,3 @@ Open terminal ui to manage wifi connection
 - [ ] install nerd font
 - [ ] add light command to sudoer file
 - [ ] git credential manager
-
-Test Push
