@@ -44,6 +44,10 @@ Determine name of keyboard key
 Open terminal ui to manage wifi connection
 ```nmtui```
 
+### Monitors
+Show names of active monitors
+```xrandr```
+
 # Stuff to automate
 - [x] add instructions to install Ansible
 - [ ] install Neovim

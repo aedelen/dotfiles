@@ -214,3 +214,6 @@ exec_always feh --bg-fill --no-fehbg $HOME/.config/i3/backgrounds/animeHouse.jpg
 bindsym $mod+shift+space exec --no-startup-id rofi -show combi
 bindsym $mod+space exec --no-startup-id rofi -show drun
 bindsym $mod+Tab exec --no-startup-id rofi -show window
+
+## Monitor Support
+set $laptop_monitor eDP-1
