@@ -42,6 +42,7 @@ Determine name of keyboard key
 ### Mod Keys
 List mod keys
 ```xmodmap```
+https://wiki.archlinux.org/title/Xmodmap
 
 ### WIFI
 Open terminal ui to manage wifi connection
