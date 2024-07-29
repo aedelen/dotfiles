@@ -32,6 +32,7 @@
           - ripgrep
           - htop
           - maim
+          - tmux
           - maven
         state: present
         update_cache: yes
