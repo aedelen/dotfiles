@@ -61,3 +61,4 @@ Show names of active monitors
 - [ ] install nerd font
 - [ ] add light command to sudoer file
 - [ ] git credential manager
+- [ ] tmux plugin manager
