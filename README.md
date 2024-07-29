@@ -57,6 +57,7 @@ Show names of active monitors
 - [ ] install Neovim
 - [ ] install oh-my-zsh
 - [ ] install docker
+  - [ ] make user to add to docker group a var instead of hardcoded as 'adam'
 - [ ] install node version manager
 - [ ] install nerd font
 - [ ] add light command to sudoer file
