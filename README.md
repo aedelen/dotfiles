@@ -39,6 +39,9 @@ git-credential-manager configure
 ### Keycodes
 Determine name of keyboard key
 ``` xev ```
+### Mod Keys
+List mod keys
+```xmodmap```
 
 ### WIFI
 Open terminal ui to manage wifi connection
