@@ -33,6 +33,7 @@
           - stow
           - ripgrep
           - htop
+          - fzf
           - maim
           - tmux
           - maven
