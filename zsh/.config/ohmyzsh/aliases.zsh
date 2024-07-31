@@ -7,3 +7,7 @@ alias {doc,docs}="cd ~/Documents"
 #Common
 alias la="ls -laFh"
 alias cls="clear"
+
+# Tmux
+alias tls="tmux list-sessions"
+alias {tma,ta}="tmux attach"
