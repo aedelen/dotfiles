@@ -220,5 +220,7 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 ## Monitor Support
 set $laptop_monitor eDP-1
 set $dock_monitor DP-1
-bindsym XF86Display exec xrandr --output DP-1 --mode 2560x1440 --scale 1 --primary --output $laptop_monitor --off 
-bindsym Shift+XF86Display exec xrandr --output $laptop_monitor --mode 1920x1080 --scale 1 --primary --output DP-1 --off
+bindsym XF86Display exec xrandr --output $dock_monitor --mode 2560x1440 --scale 1 --primary --output $laptop_monitor --off 
+bindsym Shift+XF86Display exec xrandr --output $laptop_monitor --mode 1920x1080 --scale 1 --primary --output $dock_monitor --off
+bindsym XF86Tools exec xrandr --output $laptop_monitor --off 
+bindsym Shift+XF86Tools exec xrandr --output $laptop_monitor --off && i3lock
