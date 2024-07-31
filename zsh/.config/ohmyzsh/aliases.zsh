@@ -17,3 +17,8 @@ alias {tma,ta}="tmux attach"
 # Maven
 alias ci="mvn clean install"
 alias sbr="mvn spring-boot:run"
+
+# Docker
+alias dcls="docker context list"
+alias dcl="docker context use default"
+alias dcd="docker context use dockerman"
