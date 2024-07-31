@@ -1,0 +1,27 @@
+- hosts: "ubuntu"
+  become: yes
+  tasks:
+    - name: Install Dependencies
+      apt:
+        name:
+          - rofi-dev
+          - autoconf
+          - automake
+          - libtool-bin
+          - libtool
+        state: present
+- name: clone repository
+  git: repo=git@github.com:Mange/rofi-emoji.git
+       dest=build-dir
+       accept_hostkey=yes
+  register: gitclone
+
+- name: create build dir
+  file: state=directory path={{ foo.build_dir }}
+
+- name: build
+  command: "{{ item }} chdir={{ foo.build_dir }}"
+  with_items:
+    - cmake ..
+    - make
+  when: gitclone.changed
