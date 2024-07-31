@@ -11,3 +11,7 @@ alias cls="clear"
 # Tmux
 alias tls="tmux list-sessions"
 alias {tma,ta}="tmux attach"
+
+# Maven
+alias ci="mvn clean install"
+alias sbr="mvn spring-boot:run"
