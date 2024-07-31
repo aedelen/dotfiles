@@ -1,5 +1,5 @@
 configuration{
-    modi: "run,window,combi";
+    modi: "drun,window,combi";
     icon-theme: "Oranchelo";
     show-icons: true;
     terminal: "alacritty";
@@ -9,6 +9,7 @@ configuration{
     hide-scrollbar: true;
     display-combi: " 🖥️  All ";
     display-run: " 🏃  Run ";
+    display-drun: " Application ";
     display-window: " 🪟  Window";
     sidebar-mode: true;
 }
