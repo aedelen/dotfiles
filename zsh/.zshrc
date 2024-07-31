@@ -105,4 +105,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Adding keyboard config override
-xmodmap $HOME/.Xmodmap
+# xmodmap $HOME/.Xmodmap
