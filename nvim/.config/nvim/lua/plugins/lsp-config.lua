@@ -12,6 +12,7 @@ return {
 		config = function()
 			opts = {
 				ensure_installed = { "lua_ls", "tsserver", "jdtls" },
+        auto_install = true,
 			}
 		end,
 	},
