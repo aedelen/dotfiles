@@ -9,3 +9,5 @@ vim.g.maplocalleader = "\\"
 
 -- Lazy Nvim
 require("config.lazy")
+
+require("vim-options")
