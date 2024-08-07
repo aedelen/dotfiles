@@ -32,6 +32,7 @@
           - openjdk-11-jdk
           - stow
           - duf
+          - traceroute
           - ripgrep
           - htop
           - fzf
