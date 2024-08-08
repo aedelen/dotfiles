@@ -226,4 +226,4 @@ bindsym XF86Tools exec xrandr --output $laptop_monitor --off
 bindsym Shift+XF86Tools exec xrandr --output $laptop_monitor --off && i3lock
 
 # Adding keyboard config override
-exec --no-startup-id xmodmap $HOME/.Xmodmap
+exec_always --no-startup-id xmodmap $HOME/.Xmodmap
