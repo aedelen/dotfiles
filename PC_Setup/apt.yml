@@ -39,6 +39,7 @@
           - maim
           - tmux
           - maven
+          - blueman
         state: present
         update_cache: yes
     - name: Install Communications
