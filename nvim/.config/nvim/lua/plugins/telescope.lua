@@ -12,11 +12,11 @@ return {
 				},
 			})
 			local builtin = require("telescope.builtin")
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {desc = "Find live [G]rep"})
-			vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, {})
-			vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
-			vim.keymap.set("n", "<leader>fp", builtin.git_files, {})
+			vim.keymap.set("n", "<leader>ff", builtin.find_files, {desc = "[F]ind [F]iles" })
+			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {desc = "[F]ind live [G]rep"})
+			vim.keymap.set("n", "<leader><leader>", builtin.oldfiles, {desc = "[F]ind Old Files"})
+			vim.keymap.set("n", "<leader>fh", builtin.help_tags, {desc = "[F]ind [H]elp"})
+			vim.keymap.set("n", "<leader>fp", builtin.git_files, {desc = "[F]ind [P]roject"})
 
 			require("telescope").load_extension("ui-select")
 		end,
