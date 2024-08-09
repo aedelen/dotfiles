@@ -23,7 +23,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
+vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>", {desc = "Clear Hightlights"})
 
 -- Make line numbers default
 vim.opt.number = true
