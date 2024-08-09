@@ -8,7 +8,7 @@ return {
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     config = function()
-	    vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left toggle<CR>", {})
-	    vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+	    vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left toggle<CR>", {desc = "Open file menu"})
+	    vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {desc = "[B]uffer [F]loat"})
     end
 }
