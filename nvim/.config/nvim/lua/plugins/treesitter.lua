@@ -1,15 +1,51 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build = ":TSUpdate",
-  config = function()
-    local configs = require("nvim-treesitter.configs")
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		config = function()
+			local configs = require("nvim-treesitter.configs")
 
-    configs.setup({
-      ensure_installed = { "java", "lua", "vim", "vimdoc", "query", "javascript", "html", "xml" },
-      auto_install = true,
-      sync_install = false,
-      highlight = { enable = true },
-      indent = { enable = true },
-    })
-  end,
+			configs.setup({
+				ensure_installed = {
+					"java",
+					"lua",
+					"vim",
+					"vimdoc",
+					"query",
+					"javascript",
+					"html",
+					"xml",
+					"bash",
+					"markdown",
+					"markdown_inline",
+					"diff",
+					"angular",
+					"css",
+					"comment",
+					"dockerfile",
+					"editorconfig",
+					"gitignore",
+					"git_config",
+					"go",
+					"html",
+					"ini",
+					"json",
+					"kotlin",
+					"make",
+					"python",
+					"regex",
+					"scss",
+					"sql",
+					"typescript",
+					"xml",
+					"yaml",
+				},
+				auto_install = true,
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end,
+	},
+	{ "nvim-treesitter/playground" },
 }
