@@ -11,7 +11,7 @@ alias printpath="echo $PATH|tr ':' '\n'"
 alias dfh="duf"
 
 # Tmux
-alias tls="tmux list-sessions"
+alias {tls,tla}="tmux list-sessions"
 alias {tma,ta}="tmux attach"
 
 # Maven
