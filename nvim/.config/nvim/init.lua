@@ -11,3 +11,6 @@ vim.g.maplocalleader = "\\"
 require("config.lazy")
 
 require("vim-options")
+
+-- Healthchecks from Nvim Kickstart
+require("health")
