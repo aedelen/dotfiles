@@ -20,8 +20,9 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 -- Deselect highlight from search
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 
--- TODO: Add note
-vim.wo.number = true
+-- Make line numbers default
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
