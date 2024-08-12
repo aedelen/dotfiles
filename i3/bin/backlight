@@ -10,10 +10,10 @@ let "brightnessMod = $currentbrightness / 10"
 case $1 in
   up)
     sudo light -A $brightnessMod
-    send_backlight_notification "$1"
+    #send_backlight_notification "$1"
     ;;
   down)
     sudo light -U $brightnessMod
-    send_backlight_notification "$1"
+    #send_backlight_notification "$1"
     ;;
 esac
