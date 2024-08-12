@@ -199,8 +199,8 @@ bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewi
 bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 ## Brightness Control
-bindsym XF86MonBrightnessUp exec sudo light -A 5
-bindsym XF86MonBrightnessDown exec sudo light -U 5
+bindsym XF86MonBrightnessUp exec backlight up
+bindsym XF86MonBrightnessDown exec backlight down
 bindsym shift+XF86MonBrightnessUp exec sudo light -A 25
 bindsym shift+XF86MonBrightnessDown exec sudo light -U 25
 
