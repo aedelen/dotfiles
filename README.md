@@ -33,6 +33,16 @@ add the folloing line to it
 curl -L https://aka.ms/gcm/linux-install-source.sh | sh
 git-credential-manager configure
 ```
+## Setting System Theme
+```bash
+# light
+gsettings set org.gnome.desktop.interface color-scheme prefer-light
+gsettings set org.gnome.desktop.interface gtk-theme 'Pop'
+
+# dark
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
+```
 
 ## Random Commands
 
