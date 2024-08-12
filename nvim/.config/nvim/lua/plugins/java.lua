@@ -1,10 +1,7 @@
 return {
 	"mfussenegger/nvim-jdtls",
-	config = function()
-		local config = {
-			cmd = { vim.fn.expand "~/.local/share/nvim/mason/packages/jdtls/jdtls" },
-			root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
-		}
-		require("jdtls").start_or_attach(config)
-	end,
+  config = function ()
+    
+			vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition, { desc = "[G]oto [T]ype definition" })
+  end
 }
