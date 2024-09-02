@@ -73,3 +73,4 @@ Show names of active monitors
 - [ ] add light command to sudoer file
 - [ ] git credential manager
 - [ ] tmux plugin manager
+- [ ] setup Download cleanup cron
