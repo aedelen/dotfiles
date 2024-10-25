@@ -7,7 +7,7 @@ alias {doc,docs}="cd ~/Documents"
 #Common
 alias la="ls -laFh"
 alias cls="clear"
-alias printpath="echo $PATH|tr ':' '\n'"
+alias printpath="echo \$PATH|tr ':' '\n'"
 alias dfh="duf"
 
 # Tmux
