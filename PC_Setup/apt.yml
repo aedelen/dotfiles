@@ -6,6 +6,7 @@
         name:
           - sway
           - i3
+          - xss-lock
           - light
           - tlp
           - fonts-powerline
