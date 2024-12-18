@@ -41,6 +41,7 @@
           - tmux
           - maven
           - blueman
+          - syncthing
         state: present
         update_cache: yes
     - name: Install Communications
