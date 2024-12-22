@@ -75,3 +75,4 @@ Show names of active monitors
 - [ ] tmux plugin manager
 - [ ] setup Download cleanup cron
 - [ ] install [hurl](https://github.com/Orange-OpenSource/hurl)
+- [ ] autostart syncthing server
