@@ -16,6 +16,7 @@
           - polybar
           - rofi
           - feh
+          - flameshot
         state: present
     - name: Install FastFetch PPA
       ansible.builtin.apt_repository:
