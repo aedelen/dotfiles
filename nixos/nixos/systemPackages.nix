@@ -20,5 +20,8 @@
     rocmPackages.llvm.clang
     xorg.xmodmap
     xorg.xev
+    wofi
+    syncthing
+    htop
   ];
 }
