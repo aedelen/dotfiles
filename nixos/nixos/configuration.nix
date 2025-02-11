@@ -86,21 +86,25 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.adam = {
-    isNormalUser = true;
-    description = "Adam";
-    shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      thunderbird
-      calibre
-      discord
-      ghostty
-      alacritty
+  users.users = {
+    adam = {
+      isNormalUser = true;
+      description = "Adam";
+      shell = pkgs.zsh;
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [
+        thunderbird
+        calibre
+        discord
+        ghostty
+        alacritty
+        obsidian
 
-      #inputs.home-manager.packages.${pkgs.system}.default
-    ];
+        #inputs.home-manager.packages.${pkgs.system}.default
+      ];
+    };
   };
+  
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -140,6 +144,9 @@
 
   # Enable Hyprland
   programs.hyprland.enable = true;
+
+  # Syncthing
+  services.syncthing.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
