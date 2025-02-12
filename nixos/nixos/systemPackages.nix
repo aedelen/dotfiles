@@ -21,7 +21,7 @@
     xorg.xmodmap
     xorg.xev
     wofi
-    syncthing
     htop
+    btop
   ];
 }
