@@ -93,14 +93,6 @@
       shell = pkgs.zsh;
       extraGroups = [ "networkmanager" "wheel" ];
       packages = with pkgs; [
-        thunderbird
-        calibre
-        discord
-        ghostty
-        alacritty
-        obsidian
-
-        #inputs.home-manager.packages.${pkgs.system}.default
       ];
     };
   };
