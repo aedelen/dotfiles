@@ -138,7 +138,12 @@
   programs.hyprland.enable = true;
 
   # Syncthing
-  services.syncthing.enable = true;
+  services.syncthing = {
+    enable = true;
+    user = "adam";
+
+  }
+  
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
