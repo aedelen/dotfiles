@@ -142,7 +142,7 @@
     enable = true;
     user = "adam";
 
-  }
+  };
   
 
   # This value determines the NixOS release from which the default
