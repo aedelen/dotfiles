@@ -141,7 +141,7 @@
   services.syncthing = {
     enable = true;
     user = "adam";
-
+    dataDir = "/home/adam/Documents/syncthing/";
   };
   
 
