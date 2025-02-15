@@ -29,6 +29,7 @@
     thunderbird
     ghostty
     obsidian
+    alacritty
   ];
 
   # Enable home-manager and git
