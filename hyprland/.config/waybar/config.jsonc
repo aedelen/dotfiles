@@ -8,6 +8,7 @@
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
+        "hyprland/submap",
     ],
     "modules-center": [
         "hyprland/window"
@@ -50,8 +51,8 @@
             "unlocked": ""
         }
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">[{}]</span>"
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
