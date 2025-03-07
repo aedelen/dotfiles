@@ -21,6 +21,7 @@
     xorg.xev
     brightnessctl
     killall
+    rhythmbox # music player
 
     # System monitoring
     htop
@@ -36,5 +37,7 @@
     hyprlock
     hypridle
     hyprpaper
+    networkmanagerapplet
+    blueman
   ];
 }
