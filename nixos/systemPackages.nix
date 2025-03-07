@@ -19,6 +19,7 @@
     rocmPackages.llvm.clang
     xorg.xmodmap
     xorg.xev
+    brightnessctl
     # System monitoring
     htop
     btop
@@ -28,5 +29,9 @@
     waybar
     wofi
     hyprshot #screenshots
+    swaynotificationcenter #recieve notifications
+    libnotify #send notifications
+    hyprlock
+    hypridle
   ];
 }
