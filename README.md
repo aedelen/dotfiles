@@ -64,15 +64,16 @@ Show names of active monitors
 
 # Stuff to automate
 - [x] add instructions to install Ansible
-- [ ] install [Neovim](https://github.com/neovim/neovim)
-- [ ] install [oh-my-zsh](https://ohmyz.sh/#install)
+- [x] install [Neovim](https://github.com/neovim/neovim)
+- [x] install [oh-my-zsh](https://ohmyz.sh/#install)
 - [x] install docker
   - [ ] make user to add to docker group a var instead of hardcoded as 'adam'
 - [ ] install [node version manager](https://github.com/nvm-sh/nvm)
-- [ ] install [nerd font](https://www.nerdfonts.com/)
+- [x] install [nerd font](https://www.nerdfonts.com/)
 - [ ] add light command to sudoer file
 - [ ] git credential manager
 - [ ] tmux plugin manager
 - [ ] setup Download cleanup cron
 - [ ] install [hurl](https://github.com/Orange-OpenSource/hurl)
 - [ ] autostart syncthing server
+- [ ] set [hyprshot](https://github.com/Gustash/hyprshot) default save location
