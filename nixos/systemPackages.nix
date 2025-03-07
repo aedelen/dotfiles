@@ -10,7 +10,6 @@
     neovim
     tmux
     fastfetch
-    duf
     stow
     zsh
     nodejs_22
@@ -20,8 +19,14 @@
     rocmPackages.llvm.clang
     xorg.xmodmap
     xorg.xev
-    wofi
+    # System monitoring
     htop
     btop
+    duf
+
+    # Hyprland
+    waybar
+    wofi
+    hyprshot #screenshots
   ];
 }
