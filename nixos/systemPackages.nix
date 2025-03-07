@@ -20,6 +20,8 @@
     xorg.xmodmap
     xorg.xev
     brightnessctl
+    killall
+
     # System monitoring
     htop
     btop
@@ -33,5 +35,6 @@
     libnotify #send notifications
     hyprlock
     hypridle
+    hyprpaper
   ];
 }
