@@ -20,7 +20,6 @@
     xorg.xmodmap
     xorg.xev
     brightnessctl
-    killall
     rhythmbox # music player
 
     # System monitoring
