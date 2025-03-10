@@ -7,3 +7,11 @@ set = true
 input_path = './templates/colors.css'
 output_path = '~/.config/waybar/matugen-colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
+
+[templates.gtk3]
+input_path = 'templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/matugen-colors.css'
+
+[templates.gtk4]
+input_path = 'templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/matugen-colors.css'
