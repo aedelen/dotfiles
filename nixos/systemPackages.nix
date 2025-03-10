@@ -38,5 +38,6 @@
     hyprpaper
     networkmanagerapplet
     blueman
+    matugen # gen theme based on image
   ];
 }
