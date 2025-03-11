@@ -22,3 +22,10 @@ alias sbr="mvn spring-boot:run"
 alias dcls="docker context list"
 alias dcl="docker context use default"
 alias dcd="docker context use dockerman"
+
+# Matugen
+alias lm="matugen -v -m light image ~/.config/backgrounds/streetSky.jpg"
+alias dm="matugen -v -m dark image ~/.config/backgrounds/streetSky.jpg"
+alias rw="pkill -SIGUSR2 waybar"
+alias sw="waybar &"
+alias kw="pkill waybar"
