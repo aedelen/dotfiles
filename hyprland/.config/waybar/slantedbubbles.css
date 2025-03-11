@@ -29,6 +29,7 @@
     margin-bottom: 5px;
     font-weight: normal;
     font-style: normal;
+    color: @on_surface;
 }
 
 /*----------Waybar Window------------*/
@@ -79,7 +80,7 @@ tooltip label {
 #workspaces button:hover {
     font-weight: bold;
     background-color: @tertiary;
-    color: @scrim;
+    color: @on_tertiary;
     border-radius: 16px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -111,9 +112,9 @@ tooltip label {
     border-radius: 10px 24px 10px 24px;
 }*/
 
-.modules-right > * {
-    background: red;
-    margin: 100px;
+.modules-right label {
+    background: @surface;
+    margin: 5px;
     border-radius: 10px 24px 10px 24px;
     color: @on_surface;
 }
@@ -126,6 +127,7 @@ tooltip label {
 
 .modules-right > widget:last-child > label {
     padding: 10px 10px 15px 25px;
+    background: transparent;
     margin-left: 7px;
     margin-right: 0px;
     font-weight: bold;
@@ -137,6 +139,13 @@ label.module {
 }
 
 
+#custom-swaync, #custom-weather {
+    font-weight: bold;
+    background: @surface;
+    margin: 5px; 
+    padding: 8px 16px;
+    color: @on_surface;
+}
 
 /*#clock {
     color: @on_surface;
