@@ -15,7 +15,6 @@
 
     ],
     "modules-right": [
-        "mpd",
         "idle_inhibitor",
         "pulseaudio",
         "network",
@@ -98,7 +97,7 @@
     },
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        //"spacing": 10
     },
     "clock": {
         // "timezone": "America/New_York",
