@@ -7,18 +7,19 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
+        "clock",
         "hyprland/workspaces",
         "hyprland/submap",
     ],
     "modules-center": [
+        "idle_inhibitor",
         "hyprland/window",
+        "power-profiles-daemon",
 
     ],
     "modules-right": [
-        "idle_inhibitor",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
         "temperature",
@@ -27,9 +28,8 @@
         "battery",
         //"battery#bat2",
         "tray",
-        "custom/swaync",
         "custom/power",
-        "clock",
+        "custom/swaync",
     ],
     // Modules configuration
      "hyprland/workspaces": {
@@ -53,7 +53,7 @@
         }
     },
     "hyprland/submap": {
-        "format": "<span style=\"italic\">[r}]</span>"
+        "format": "<span style=\"italic\">{}</span>"
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
