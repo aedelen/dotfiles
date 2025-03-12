@@ -25,7 +25,7 @@ alias dcd="docker context use dockerman"
 
 # Matugen
 alias lm="matugen -v -m light image ~/.config/backgrounds/streetSky.jpg"
-alias dm="matugen -v -m dark image ~/.config/backgrounds/streetSky.jpg"
+alias dm="matugen -v -m dark image ~/.config/backgrounds/animeHouse.jpg"
 alias rw="pkill -SIGUSR2 waybar"
 alias sw="waybar &"
 alias kw="pkill waybar"
