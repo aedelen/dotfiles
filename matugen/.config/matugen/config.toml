@@ -26,7 +26,11 @@ post_hook = 'swaync-client -rs'
 input_path = 'templates/rofi.css'
 output_path = "~/.config/rofi/launchers/styles/matugen-rofi.css"
 
-[templates.test]
+[templates.gtk-theme]
 input_path = 'change-theme.sh'
 output_path = '~/.config/gtk-3.0/change-theme.sh'
 post_hook = '. ~/.config/gtk-3.0/change-theme.sh'
+
+[templates.hyprlock]
+input_path = 'templates/matugen-hyprlock.conf'
+output_path = '~/.config/hypr/hyprlock/matugen/matugen-hyprlock.conf'
