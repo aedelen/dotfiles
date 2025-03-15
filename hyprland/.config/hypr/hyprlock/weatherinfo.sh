@@ -5,8 +5,8 @@
 #
 
 # HARDCODE Location & City
-CITY=$(grep -oP '^\$CITY\s*=\s*\K.+' ~/.config/hypr/hyprlock.conf)
-COUNTRY=$(grep -oP '^\$COUNTRY\s*=\s*\K.+' ~/.config/hypr/hyprlock.conf)
+CITY=$(grep -oP '^\$CITY\s*=\s*\K.+' ~/.config/hypr/matuprland-hyprlock.conf)
+COUNTRY=$(grep -oP '^\$COUNTRY\s*=\s*\K.+' ~/.config/hypr/matuprland-hyprlock.conf)
 
 # Check if CITY and COUNTRY are valid
 if [[ -n "$CITY" && -n "$COUNTRY" ]]; then

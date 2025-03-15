@@ -7,7 +7,7 @@
 
 
 # Read the wifi-mode alias from hyprlock.conf
-show_ssid=$(grep -oP '^\$wifi-mode\s*=\s*\K\S+' ~/.config/hypr/hyprlock.conf)
+show_ssid=$(grep -oP '^\$wifi-mode\s*=\s*\K\S+' ~/.config/hypr/matuprland-hyprlock.conf)
 
 # Check if the username was successfully extracted
 if [ -z "$show_ssid" ]; then
