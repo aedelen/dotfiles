@@ -41,5 +41,6 @@
     matugen # gen theme based on image
     rofi
     kanshi
+    pywalfox-native
   ];
 }

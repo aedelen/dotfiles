@@ -34,3 +34,8 @@ post_hook = '. ~/.config/gtk-3.0/change-theme.sh'
 [templates.hyprlock]
 input_path = 'templates/matugen-hyprlock.conf'
 output_path = '~/.config/hypr/hyprlock/matugen/matugen-hyprlock.conf'
+
+[templates.pywalfox]
+input_path = 'templates/matugen-pywalfox.conf'
+output_path = '~/.cache/wal/colors-val.vim'
+post_hook = 'pywalfox update'
