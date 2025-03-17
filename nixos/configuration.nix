@@ -82,7 +82,7 @@
   # Enable ZSH
   programs.zsh = {
     enable = true;
-    ohMyZsh.enable = true;
+    ohMyZsh.enable = false;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -142,6 +142,11 @@
     enable = true;
     user = "adam";
     dataDir = "/home/adam/Documents/syncthing/";
+  };
+
+  # Configure local domains
+  networking.hosts = {
+    "192.168.1.254" = ["adamnas.local"];
   };
   
 
