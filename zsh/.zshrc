@@ -1,5 +1,8 @@
 source .path
 
+#Theme
+#source ~/.config/zsh/theme/agnoster.zsh-theme
+
 # Aliases
 source ~/.aliases
 
