@@ -18,17 +18,17 @@
 
     ],
     "modules-right": [
-        "pulseaudio",
         "network",
         "cpu",
         "memory",
-        "temperature",
-        "backlight",
+        //"temperature",
+        //"backlight",
         //"keyboard-state",
+        //"pulseaudio",
         "battery",
         //"battery#bat2",
         "tray",
-        "custom/power",
+        //"custom/power",
         "custom/swaync",
     ],
     // Modules configuration
