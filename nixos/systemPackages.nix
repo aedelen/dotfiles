@@ -21,6 +21,7 @@
     xorg.xev
     brightnessctl
     rhythmbox # music player
+    unzip
 
     # System monitoring
     htop
@@ -42,5 +43,10 @@
     rofi
     kanshi
     pywalfox-native
+
+    # Mount USB Drives
+    usbutils
+    udiskie
+    udisks
   ];
 }

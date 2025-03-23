@@ -148,6 +148,11 @@
   networking.hosts = {
     "192.168.1.254" = ["adamnas.local"];
   };
+
+  # Automount USB Drives
+  services.devmon.enable = true;
+  services.gvfs.enable = true; 
+  services.udisks2.enable = true;
   
 
   # This value determines the NixOS release from which the default
