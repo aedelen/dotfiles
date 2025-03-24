@@ -4,7 +4,7 @@ source .path
 fpath=(~/.config/zsh/theme/ $fpath)
 autoload -U promptinit
 promptinit
-#source ~/.config/zsh/theme/agnoster.zsh-theme
+prompt agnoster
 
 # Aliases
 source ~/.aliases
