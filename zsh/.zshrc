@@ -11,6 +11,7 @@ source ~/.config/zsh/theme/zshcolors
 # Aliases
 source ~/.aliases
 
+# Turn off vim mode in terminal
 bindkey -e
 
 export NVM_DIR="$HOME/.nvm"
