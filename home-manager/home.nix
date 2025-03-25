@@ -30,6 +30,7 @@
     ghostty
     obsidian
     alacritty
+    filezilla
   ];
 
   # Enable home-manager and git
