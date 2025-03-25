@@ -34,11 +34,28 @@ typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
 )
 
 ### Segment drawing
-# A few utility functions to make it easy and re-usable to draw segmented prompts
+# A few utility functions to make it easy and re-usable to draw segmented promptsjjk
+
 
 CURRENT_BG='NONE'
+if [[ -z "$PRIMARY_BG" ]]; then
+	PRIMARY_BG=default
+fi
+
 if [[ -z "$PRIMARY_FG" ]]; then
-	PRIMARY_FG=black
+	PRIMARY_FG=default
+fi
+
+if [[ -z "$DIR_BG" ]]; then
+	DIR_BG=blue
+fi
+
+if [[ -z "$DIR_FG" ]]; then
+	DIR_FG=default
+fi
+
+if [[ -z "$GIT_FG" ]]; then
+	GIT_FG=$DIR_FG
 fi
 
 # Characters
@@ -85,7 +102,7 @@ prompt_context() {
   local user=`whoami`
 
   if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
-    prompt_segment $PRIMARY_FG default " %(!.%{%F{yellow}%}.)$user@%m "
+    prompt_segment $PRIMARY_BG $PRIMARY_FG " %(!.%{%F{yellow}%}.)$user@%m "
   fi
 }
 
@@ -109,14 +126,14 @@ prompt_git() {
     else
       ref="$DETACHED ${ref/.../}"
     fi
-    prompt_segment $color $PRIMARY_FG
+    prompt_segment $color $GIT_FG
     print -n " $ref"
   fi
 }
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue $PRIMARY_FG ' %~ '
+  prompt_segment $DIR_BG $DIR_FG ' %~ '
 }
 
 # Status:
@@ -130,7 +147,7 @@ prompt_status() {
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}$LIGHTNING"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}$GEAR"
 
-  [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
+  [[ -n "$symbols" ]] && prompt_segment $PRIMARY_BG $PRIMARY_FG " $symbols "
 }
 
 # Display current virtual environment
@@ -170,4 +187,5 @@ prompt_agnoster_setup() {
   zstyle ':vcs_info:git*' actionformats '%b (%a)'
 }
 
+source ~/.config/zsh/theme/zshcolors
 prompt_agnoster_setup "$@"

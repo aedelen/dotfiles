@@ -1,3 +1,6 @@
+[config.custom_colors]
+prompt_primary_background = {color = "#ff0000", blend = false}
+
 [config.wallpaper]
 command = "hyprctl"
 arguments = ["hyprpaper", "reload", ","]
@@ -39,3 +42,8 @@ output_path = '~/.config/hypr/hyprlock/matugen/matugen-hyprlock.conf'
 input_path = 'templates/matugen-pywalfox.conf'
 output_path = '~/.cache/wal/colors-val.vim'
 post_hook = 'pywalfox update'
+
+[templates.zsh]
+input_path = 'templates/zshcolors'
+output_path = '~/.config/zsh/theme/zshcolors'
+

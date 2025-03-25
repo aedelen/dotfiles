@@ -1,0 +1,5 @@
+PRIMARY_BG={{colors.primary.default.hex}}
+PRIMARY_FG={{colors.on_primary.default.hex}}
+DIR_BG={{colors.secondary.default.hex}}
+DIR_FG={{colors.on_secondary.default.hex}}
+GIT_FG={{colors.on_primary.default.hex}}

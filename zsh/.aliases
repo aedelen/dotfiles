@@ -9,6 +9,7 @@ alias la="ls -laFh"
 alias cls="clear"
 alias printpath="echo \$PATH|tr ':' '\n'"
 alias dfh="duf"
+alias refresh=". ~/.zshrc"
 
 # Tmux
 alias {tls,tla}="tmux list-sessions"
@@ -24,8 +25,8 @@ alias dcl="docker context use default"
 alias dcd="docker context use dockerman"
 
 # Matugen
-alias lm="matugen -v -m light image ~/.config/backgrounds/streetSky.jpg"
-alias dm="matugen -v -m dark image ~/.config/backgrounds/animeHouse.jpg"
+alias lm="matugen -v -m light image ~/.config/backgrounds/streetSky.jpg && refresh"
+alias dm="matugen -v -m dark image ~/.config/backgrounds/animeHouse.jpg && refresh"
 alias rw="pkill -SIGUSR2 waybar"
 alias sw="waybar &"
 alias kw="pkill waybar"

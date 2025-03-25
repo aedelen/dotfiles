@@ -29,6 +29,10 @@
 
     @define-color on_primary_fixed_variant #004b6f;
 
+    @define-color on_prompt_primary_background #ffffff;
+
+    @define-color on_prompt_primary_background_container #3a0905;
+
     @define-color on_secondary #ffffff;
 
     @define-color on_secondary_container #0c1d29;
@@ -60,6 +64,14 @@
     @define-color primary_fixed #c9e6ff;
 
     @define-color primary_fixed_dim #95cdf7;
+
+    @define-color prompt_primary_background #904b40;
+
+    @define-color prompt_primary_background_container #ffdad4;
+
+    @define-color prompt_primary_background_source #ff0000;
+
+    @define-color prompt_primary_background_value #ff0000;
 
     @define-color scrim #000000;
 
