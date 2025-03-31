@@ -10,6 +10,7 @@ alias cls="clear"
 alias printpath="echo \$PATH|tr ':' '\n'"
 alias dfh="duf"
 alias refresh=". ~/.zshrc"
+alias open="xdg-open"
 
 # Tmux
 alias {tls,tla}="tmux list-sessions"
