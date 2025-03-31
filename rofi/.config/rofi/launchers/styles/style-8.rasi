@@ -1,19 +1,8 @@
 /***
- *    ┏┓┏┳┓┓┏┓ ┏┓  ┓┓
- *    ┗┓ ┃ ┗┫┃ ┣ ━━┃┃
- *    ┗┛ ┻ ┗┛┗┛┗┛  ┻┻
+ *    ┏┓┏┳┓┓┏┓ ┏┓  ┏┓
+ *    ┗┓ ┃ ┗┫┃ ┣ ━━┣┫
+ *    ┗┛ ┻ ┗┛┗┛┗┛  ┗┛
  *                   
- */
-
-
-
-/**
- * ROFI Layout 
- *
- * Style 5: Grid layout with mode icons over a background image.
- * Attribute: rofilaunch,launcher
- * User: The HyDE Project [ ModeGrid ]
- * Copyright: https://github.com/prasanthrangan/hyprdots/
  */
 
 
@@ -21,49 +10,54 @@
 configuration {
     modi:                        "drun,filebrowser,window,run";
     show-icons:                  true;
-    display-drun:                " ";
-    display-run:                 " ";
-    display-filebrowser:         " ";
-    display-window:              " ";
+    display-drun:                " ";
+    display-run:                 " ";
+    display-filebrowser:         " ";
+    display-window:              " ";
     drun-display-format:         "{name}";
     window-format:               "{w}{t}";
 }
 
-// Global Properties //
-@import "~/.config/rofi/launchers/styles/shared/colors.rasi"
-@import "~/.config/rofi/launchers/styles/shared/fonts.rasi"
 
+// Global Properties //
+@import  "~/.config/rofi/launchers/styles/shared/colors.rasi"
+@import  "~/.config/rofi/launchers/styles/shared/fonts.rasi"
 
 // Main //
 window {
-    height:                      31em;
-    width:                       50em;
+    height:                      30em;
+    width:                       37em;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
     cursor:                      "default";
     spacing:                     0em;
     padding:                     0em;
+    border-radius:               1em;
     border-color:                @border-color;
-    border-radius:               16px;
-    background-color:            @background-alpha;
+    background-color:            @background;
 }
 mainbox {
     enabled:                     true;
     spacing:                     0em;
     padding:                     0em;
     orientation:                 vertical;
-    children:                    [ "inputbar" , "listbox" , "mode-switcher" ];
+    children:                    [ "inputbar" , "dummybox" ];
     background-color:            transparent;
+    background-image:            url("~/.config/rofi/images/currentWalBlur.thumb", height);
+}
+dummybox {
+    padding:                     0.5em;
+    spacing:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "mode-switcher" , "listbox" ];
+    background-color:            transparent;
+    background-image:            transparent;
 }
 
 
 // Inputs //
 inputbar {
-    enabled:                     true;
-    children:                    [ "entry" ];
-}
-entry {
     enabled:                     false;
 }
 
@@ -72,41 +66,45 @@ entry {
 listbox {
     padding:                     0em;
     spacing:                     0em;
-    orientation:                 horizontal;
-    children:                    [ "listview" ];
+    children:                    [ "dummy" , "listview" , "dummy" ];
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/images/currentWalBlur.thumb", width);
+    background-image:            transparent;
 }
 listview {
-    padding:                     2em;
-    spacing:                     1em;
+    padding:                     1em;
+    spacing:                     0em;
     enabled:                     true;
-    columns:                     5;
+    columns:                     1;
+    lines:                       7;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
+    expand:                      false;
     fixed-height:                true;
     fixed-columns:               true;
     cursor:                      "default";
     background-color:            @background-alpha;
     text-color:                  @foreground;
+    border-radius:               1.5em;
+}
+dummy {
+    background-color:            transparent;
 }
 
 
 // Modes //
 mode-switcher {
-    orientation:                 horizontal;
+    orientation:                 vertical;
+    width:                       6.8em;
     enabled:                     true;
-    padding:                     2em 9.8em 2em 9.8em;
-    spacing:                     2em;
+    padding:                     3.2em 1em 3.2em 1em;
+    spacing:                     1em;
     background-color:            transparent;
 }
 button {
     cursor:                      pointer;
-    padding:                     2.5em;
-    spacing:                     0em;
     border-radius:               3em;
     background-color:            @background-alpha;
     text-color:                  @foreground;
@@ -119,30 +117,27 @@ button selected {
 
 // Elements //
 element {
-    orientation:                 vertical;
     enabled:                     true;
-    border-radius:               16px;
-    spacing:                     0.2em;
-    padding:                     0.5em;
+    spacing:                     1em;
+    padding:                     0.4em;
     cursor:                      pointer;
+    border-radius:               1em;
     background-color:            transparent;
     text-color:                  @foreground;
 }
 element selected.normal {
-    border:                      3px 0px 3px 0px;
-    border-color:            	 @selected;
-    background-color:            transparent;
-    text-color:                  @selected;
+    background-color:            @selected;
+    text-color:                  @selected-text;
 }
 element-icon {
-    size:                        5.5em;
+    size:                        3em;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
 }
 element-text {
     vertical-align:              0.5;
-    horizontal-align:            0.5;
+    horizontal-align:            0.0;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
