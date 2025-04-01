@@ -43,6 +43,9 @@
     rofi
     kanshi
     pywalfox-native
+    wl-clip-persist
+    wl-clipboard
+    cliphist
 
     # Mount USB Drives
     usbutils
