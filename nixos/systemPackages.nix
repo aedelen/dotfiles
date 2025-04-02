@@ -51,5 +51,10 @@
     usbutils
     udiskie
     udisks
+
+    # Games
+    wineWowPackages.stagingFull 
+    winetricks
+    mgba
   ];
 }
