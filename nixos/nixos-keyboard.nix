@@ -34,6 +34,7 @@
           "/dev/input/by-path/pci-0000:3d:00.0-usbv2-0:1.3:1.1-event-kbd"
           "/dev/input/by-path/pci-0000:3d:00.0-usb-0:1.3:1.0-event-kbd"
           "/dev/input/by-path/pci-0000:3d:00.0-usb-0:1.3:1.1-event-kbd"
+          "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
         ];
         extraDefCfg = "process-unmapped-keys yes";
         config = ''
