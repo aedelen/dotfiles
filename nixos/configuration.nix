@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./systemPackages.nix
+      ./nixos-keyboard.nix
       #<home-manager/nixos>
     ];
 
@@ -86,13 +87,16 @@
     ohMyZsh.enable = false;
   };
 
+  # Define additional groups
+  #users.groups.uinput = {};
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
     adam = {
       isNormalUser = true;
       description = "Adam";
       shell = pkgs.zsh;
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "input" "uinput"];
       packages = with pkgs; [
       ];
     };

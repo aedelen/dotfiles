@@ -5,22 +5,28 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    curl
+    zsh
+    rocmPackages.llvm.clang
+    brightnessctl
+    rhythmbox # music player
+
+    #Keyboard
+    #kanata
+    wev # Key id finder
+
+    # Development Env
     neovim
     tmux
-    fastfetch
-    stow
-    zsh
     nodejs_22
     fzf
     fzf-zsh
     ripgrep
-    rocmPackages.llvm.clang
-    xorg.xmodmap
-    xorg.xev
-    brightnessctl
-    rhythmbox # music player
+
+    # CLI Utilites
+    fastfetch
+    stow
+    wget
+    curl
     unzip
 
     # System monitoring
@@ -29,20 +35,22 @@
     duf
 
     # Hyprland
-    waybar
-    wofi
+    waybar # system bar
+    wofi #app launcher
     hyprshot #screenshots
     swaynotificationcenter #recieve notifications
     libnotify #send notifications
-    hyprlock
-    hypridle
-    hyprpaper
+    hyprlock # lockscreen
+    hypridle # sleep
+    hyprpaper # wallpaper
     networkmanagerapplet
-    blueman
+    blueman # bluetooth manager
     matugen # gen theme based on image
-    rofi
-    kanshi
-    pywalfox-native
+    rofi # app launcher
+    kanshi # monitor management
+    pywalfox-native # Theme firefox
+
+    # Clipboard
     wl-clip-persist
     wl-clipboard
     cliphist
