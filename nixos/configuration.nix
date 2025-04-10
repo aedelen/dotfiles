@@ -96,7 +96,7 @@
       isNormalUser = true;
       description = "Adam";
       shell = pkgs.zsh;
-      extraGroups = [ "networkmanager" "wheel" "input" "uinput"];
+      extraGroups = [ "networkmanager" "wheel" "input" ];
       packages = with pkgs; [
       ];
     };
