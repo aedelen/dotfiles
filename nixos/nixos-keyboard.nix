@@ -37,26 +37,7 @@
           "/dev/input/by-path/platform-i8042-serio-0-event-kbd"
         ];
         extraDefCfg = "process-unmapped-keys yes";
-        config = ''
-          (defvar
-            tap-timeout  200
-            hold-timeout 200
-          )
-
-          (defsrc
-            caps
-          )
-
-          (defalias
-            ;; tap for esc hold for ctrl
-            esc-ctrl (tap-hold $tap-timeout $hold-timeout esc lctrl)
-          )
-
-          (deflayer base
-            ;; must be in same order as defsrc
-            @esc-ctrl
-          )
-        '';
+        configFile = ../kanata/.config/kanata.conf;
       };
     };
   };
