@@ -64,5 +64,6 @@
     wineWowPackages.stagingFull 
     winetricks
     mgba
+    xboxdrv
   ];
 }
