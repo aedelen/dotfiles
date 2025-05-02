@@ -147,11 +147,13 @@
     enable = true;
     user = "adam";
     dataDir = "/home/adam/Documents/syncthing/";
+    openDefaultPorts = true;
   };
 
   # Configure local domains
   networking.hosts = {
     "192.168.1.254" = ["adamnas.local"];
+    "192.168.1.197" = ["onion.local"];
   };
 
   # Automount USB Drives
