@@ -65,5 +65,6 @@
     winetricks
     mgba
     xboxdrv
+    mame-tools
   ];
 }
