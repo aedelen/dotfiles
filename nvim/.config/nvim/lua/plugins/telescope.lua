@@ -10,6 +10,13 @@ return {
 						require("telescope.themes").get_dropdown({}),
 					},
 				},
+        pickers = {
+          live_grep = {
+            additional_args = function(opts)
+              return {"--hidden", "!**/.git/*"}
+            end
+          },
+        },
 			})
 			local builtin = require("telescope.builtin")
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })

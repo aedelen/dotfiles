@@ -1,5 +1,7 @@
 -- vim config
+-- Enable line numbers
 vim.cmd("set nu")
+-- Enable relative line numbers
 vim.cmd("set rnu")
 
 -- Make sure to setup `mapleader` and `maplocalleader` before
