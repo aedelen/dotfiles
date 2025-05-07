@@ -66,5 +66,6 @@
     mgba
     xboxdrv
     mame-tools
+    mupen64plus
   ];
 }
