@@ -15,12 +15,14 @@
     wev # Key id finder
 
     # Development Env
-    neovim
     tmux
     nodejs_22
     fzf
     fzf-zsh
-    ripgrep
+    ripgrep # find alternative used by neovim telescope
+    jdk17
+    maven
+    fd # find alternative used by neovim telescope
 
     # CLI Utilites
     fastfetch
@@ -67,5 +69,6 @@
     xboxdrv
     mame-tools
     mupen64plus
+    moonlight-qt
   ];
 }

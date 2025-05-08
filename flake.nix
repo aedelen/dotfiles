@@ -7,13 +7,20 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, nixpkgs-unstable, ... }: {
 
     nixosConfigurations = {
       thinkpad = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            config.allowUnfree = true;
+            system = "x86_64-linux";
+          };
+        };
         modules = [
           nixos/configuration.nix
           home-manager.nixosModules.home-manager

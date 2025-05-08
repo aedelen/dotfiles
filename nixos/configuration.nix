@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, inputs, pkgs, ... }:
+{ config, inputs, pkgs, pkgs-unstable, ... }:
 
 {
   imports =
@@ -101,8 +101,11 @@
       ];
     };
   };
-  
 
+
+  environment.systemPackages = with pkgs-unstable; [
+    neovim
+  ];
   # Install firefox.
   programs.firefox.enable = true;
 
