@@ -70,5 +70,8 @@
     mame-tools
     mupen64plus
     moonlight-qt
+
+    # Utilities
+    bitwarden-desktop
   ];
 }
