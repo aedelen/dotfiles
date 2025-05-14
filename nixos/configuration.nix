@@ -100,6 +100,12 @@
       packages = with pkgs; [
       ];
     };
+    test = {
+      isNormalUser = true;
+      description = "Test";
+      extraGroups = [ "networkmanager" "input" ];
+      packages = [pkgs."discord" pkgs-unstable."gallery-dl"];
+    };
   };
 
 
