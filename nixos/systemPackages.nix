@@ -1,6 +1,8 @@
 { config, inputs, pkgs, ... }:
 
 {
+  imports = [./games.nix];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -62,14 +64,6 @@
     udiskie
     udisks
 
-    # Games
-    wineWowPackages.stagingFull 
-    winetricks
-    mgba
-    xboxdrv
-    mame-tools
-    mupen64plus
-    moonlight-qt
 
     # Utilities
     bitwarden-desktop
