@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
-      ensure_installed = { "lua_ls", "ts_ls", "jdtls" },
+      ensure_installed = { "lua_ls", "ts_ls"},
       auto_install = true,
     },
   },
