@@ -63,7 +63,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -140,7 +140,13 @@
   # networking.firewall.enable = false;
 
   # Install Nerdfonts
-  fonts.packages = with pkgs; [ nerdfonts ];
+  fonts.packages = with pkgs; [ 
+    nerd-fonts.geist-mono
+    nerd-fonts.commit-mono
+    nerd-fonts.dejavu-sans-mono
+    nerd-fonts.profont
+    nerd-fonts.jetbrains-mono
+  ];
 
   # Enable rootless Docker
   virtualisation.docker.rootless = {

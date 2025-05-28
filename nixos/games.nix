@@ -5,7 +5,7 @@
 	    wineWowPackages.stagingFull 
 	    winetricks
 	    mgba
-	    xboxdrv
+    #xboxdrv
 	    mame-tools
 	    mupen64plus
 	    moonlight-qt
