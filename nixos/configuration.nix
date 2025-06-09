@@ -109,9 +109,10 @@
   };
 
 
-  environment.systemPackages = with pkgs-unstable; [
-    neovim
-  ];
+  #environment.systemPackages = with pkgs-unstable; [
+  #  neovim
+  #];
+
   # Install firefox.
   programs.firefox.enable = true;
 
