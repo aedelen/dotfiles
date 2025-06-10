@@ -31,6 +31,19 @@
             }
         ];
       };
+
+      dockerman = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            config.allowUnfree = true;
+            system = "x86_64-linux";
+          };
+        };
+        modules = [
+          nixos/dockerman/configuration.nix
+	];
+      };
     };
 
   };
