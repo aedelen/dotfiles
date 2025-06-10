@@ -170,6 +170,7 @@
   networking.hosts = {
     "192.168.1.254" = ["adamnas.local"];
     "192.168.1.197" = ["onion.local"];
+    "192.168.1.26" = ["dockerman.local" "dockerman"];
   };
 
   # Automount USB Drives
