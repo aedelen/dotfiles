@@ -24,6 +24,16 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Set Static IP
+  networking = {
+    interfaces.ens3 = {
+      ipv4.addresses = [{
+        address = "192.168.1.26";
+        prefixLength = 24;
+      }];
+    };
+  };
+
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
