@@ -13,3 +13,5 @@
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
 [init]
 	defaultBranch = main
+[alias]
+	tree = log --oneline --graph --decorate --all
