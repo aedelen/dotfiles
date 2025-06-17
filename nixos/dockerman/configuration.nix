@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../nixosModules/docker.nix
     ];
 
   # Bootloader.
@@ -105,6 +106,9 @@
     enable = true;
     settings.PasswordAuthentication = false;
   };
+
+  # Enable rootless Docker
+  dockerModule.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

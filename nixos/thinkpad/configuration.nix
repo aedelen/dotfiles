@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./systemPackages.nix
       ./nixos-keyboard.nix
+      ../nixosModules/docker.nix
       #<home-manager/nixos>
     ];
 
@@ -150,10 +151,12 @@
   ];
 
   # Enable rootless Docker
-  virtualisation.docker.rootless = {
+  /*virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
-  };
+  };*/
+
+  dockerModule.enable = true;
 
   # Enable Hyprland
   programs.hyprland.enable = true;
