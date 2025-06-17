@@ -151,11 +151,6 @@
   ];
 
   # Enable rootless Docker
-  /*virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };*/
-
   dockerModule.enable = true;
 
   # Enable Hyprland
