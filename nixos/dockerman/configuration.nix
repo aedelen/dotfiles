@@ -33,6 +33,10 @@
         prefixLength = 24;
       }];
     };
+    defaultGateway = {
+      address = "192.168.1.1";
+      prefixLength = 24;
+    };
   };
 
   # Set your time zone.
