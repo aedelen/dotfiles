@@ -36,6 +36,7 @@
     defaultGateway = {
       address = "192.168.1.1";
     };
+    firewall.enable = true;
     firewall.allowedTCPPorts = [8000];
   };
 
