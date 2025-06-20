@@ -83,6 +83,8 @@
     neovim
     git
     ];
+    # start systemd units on boot instead of login. Needed for Docker
+    linger = true;
   };
 
   # Allow unfree packages
