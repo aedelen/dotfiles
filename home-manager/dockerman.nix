@@ -38,7 +38,8 @@
     userEmail = "aedelen42@gmail.com";
   };
 
-  home.file.".config/nvim/init.lua".source = ../nvim/.config/nvim/init.lua;
+  #home.file.".config/nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink "../nvim/.config/nvim/init.lua";
+  #home.file.".config/nvim/init.lua".source = ../nvim/.config/nvim/init.lua;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.05";
