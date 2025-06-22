@@ -25,7 +25,7 @@
     jdk17
     maven
     fd # find alternative used by neovim telescope
-    neovim
+    #neovim
 
     # CLI Utilites
     fastfetch
