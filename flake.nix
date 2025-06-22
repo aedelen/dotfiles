@@ -27,7 +27,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.adam = import ./home-manager/home.nix;
+              home-manager.users.adam = import ./home-manager/thinkpad.nix;
             }
         ];
       };
