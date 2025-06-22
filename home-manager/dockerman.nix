@@ -19,8 +19,16 @@
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
     #Put packages here
-    neovim
+    #neovim
   ];
+  
+  # Enable Neovim
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+  };
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
