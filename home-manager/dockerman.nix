@@ -20,7 +20,7 @@
   home.packages = with pkgs; [
     #Put packages here
     #neovim
-    vimPlugins.telescope-nvim
+    #vimPlugins.telescope-nvim
   ];
   
   # Enable Neovim
@@ -33,6 +33,9 @@
     extraPackages = with pkgs; [
       ripgrep
       fd
+      gcc
+      tree-sitter
+      wl-clipboard
     ];
 
     extraLuaConfig = ''
@@ -40,6 +43,7 @@
 
       -- Import files --
       ${builtins.readFile neovim/init.lua}
+      -- End of extraLuaConfig --
 
     '';
 
@@ -54,6 +58,7 @@
 	  p.tree-sitter-json
 	]));
 	config = ''${builtins.readFile neovim/treesitter.lua}'';
+	type = "lua";
       }
     ];
 
