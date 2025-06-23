@@ -60,6 +60,11 @@
 	config = ''${builtins.readFile neovim/treesitter.lua}'';
 	type = "lua";
       }
+      {
+        plugin = neo-tree-nvim;
+	config = ''${builtins.readFile neovim/neo-tree.lua}'';
+	type = "lua";
+      }
     ];
 
   };
