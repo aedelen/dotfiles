@@ -30,55 +30,30 @@
     vimAlias = true;
     vimdiffAlias = true;
 
+    extraPackages = with pkgs; [
+      ripgrep
+      fd
+    ];
+
     extraLuaConfig = ''
       -- Write lua code here --
 
       -- Import files --
+      ${builtins.readFile neovim/init.lua}
 
     '';
 
     plugins = with pkgs.vimPlugins; [
       telescope-fzf-native-nvim
       {
-        plugin = telescope-nvim;
-	config = ''
-	  require('telescope').setup({
-  	extensions = {
-      	fzf = {
-        	fuzzy = true,                    -- false will only do exact matching
-        	override_generic_sorter = true,  -- override the generic sorter
-        	override_file_sorter = true,     -- override the file sorter
-        	case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                         -- the default case_mode is "smart_case"
-      	}
-    	}
-  })
-  
-  require('telescope').load_extension('fzf')
-	'';
-	type = "lua";
-      }
-      {
-        plugin = which-key-nvim;
-	#config = ../nvim/.config/nvim/init.lua;
-	#config = '' ${builtins.readFile ../nvim/.config/nvim/lua/plugins/which-key.lua} '';
-	config = ''
-	  require("which-key").setup()
-
-		-- Document existing key chains
-		require("which-key").add({
-			{ "<leader>c", group = "[C]ode" },
-			{ "<leader>d", group = "[D]ocument" },
-			{ "<leader>r", group = "[R]ename" },
-			{ "<leader>s", group = "[S]earch" },
-			{ "<leader>f", group = "[F]ind" },
-			{ "<leader>w", group = "[W]orkspace" },
-			{ "<leader>t", group = "[T]oggle" },
-			{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
-		})
-
-        '';
-	type = "lua";
+        plugin = (nvim-treesitter.withPlugins (p: [
+	  p.tree-sitter-nix
+	  p.tree-sitter-vim
+	  p.tree-sitter-bash
+	  p.tree-sitter-lua
+	  p.tree-sitter-json
+	]));
+	config = ''${builtins.readFile neovim/treesitter.lua}'';
       }
     ];
 
