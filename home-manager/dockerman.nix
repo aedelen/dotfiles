@@ -49,6 +49,7 @@
 
     plugins = with pkgs.vimPlugins; [
       telescope-fzf-native-nvim
+
       {
         plugin = (nvim-treesitter.withPlugins (p: [
 	  p.tree-sitter-nix
@@ -60,11 +61,19 @@
 	config = ''${builtins.readFile neovim/treesitter.lua}'';
 	type = "lua";
       }
+
       {
         plugin = neo-tree-nvim;
 	config = ''${builtins.readFile neovim/neo-tree.lua}'';
 	type = "lua";
       }
+
+      {
+	plugin = gitsigns-nvim;
+	config = ''${builtins.readFile neovim/gitsigns.lua}'';
+	type = "lua";
+      }
+
     ];
 
   };
