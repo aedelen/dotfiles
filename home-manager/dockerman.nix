@@ -74,6 +74,11 @@
 	type = "lua";
       }
 
+      {
+	plugin = telescope-nvim;
+	config = ''${builtins.readFile neovim/telescope.lua}'';
+	type = "lua";
+      }
     ];
 
   };
