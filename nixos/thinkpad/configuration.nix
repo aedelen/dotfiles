@@ -118,6 +118,9 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Install Games
+  games.enable = false;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
