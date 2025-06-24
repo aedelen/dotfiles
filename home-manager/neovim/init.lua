@@ -14,3 +14,5 @@ opt.relativenumber = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- Theme
+vim.cmd.colorscheme 'tokyonight-night'

@@ -50,6 +50,7 @@
     plugins = with pkgs.vimPlugins; [
 	telescope-fzf-native-nvim
 	telescope-ui-select-nvim
+	tokyonight-nvim
 
       {
         plugin = (nvim-treesitter.withPlugins (p: [
@@ -80,6 +81,13 @@
 	config = ''${builtins.readFile neovim/telescope.lua}'';
 	type = "lua";
       }
+
+      {
+	plugin = which-key-nvim;
+	config = ''${builtins.readFile neovim/which-key.lua}'';
+	type = "lua";
+      }
+
     ];
 
   };
