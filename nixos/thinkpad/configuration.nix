@@ -27,7 +27,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.firewall.allowedTCPPorts = [8000];
+  #networking.firewall.allowedTCPPorts = [8000];
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
