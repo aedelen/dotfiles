@@ -22,21 +22,28 @@
         gcc
         tree-sitter
         wl-clipboard
-        stylua
+
+        # LSP
+        bash-language-server
+        lua-language-server
+        nil
+
+        # Styles
         nixfmt-rfc-style
+        stylua
       ];
 
       extraLuaConfig = ''
-        	-- Write lua code here --
-
-        	-- Import files -- 
-        	${builtins.readFile ./settings.lua}
-        	${builtins.readFile ./conform.lua}
-        	${builtins.readFile ./lualine.lua}
-			-- LSP
-        	vim.lsp.enable('lua_ls') 
-        	vim.lsp.enable('nil_ls') 
-        	-- End of extraLuaConfig --
+        -- Write lua code here --
+        -- Import files -- 
+        ${builtins.readFile ./settings.lua}
+        ${builtins.readFile ./conform.lua}
+        ${builtins.readFile ./lualine.lua}
+         -- LSP
+        vim.lsp.enable('lua_ls') 
+        vim.lsp.enable('nil_ls') 
+        vim.lsp.enable('bashls') 
+         -- End of extraLuaConfig --
       '';
 
       plugins = with pkgs.vimPlugins; [
