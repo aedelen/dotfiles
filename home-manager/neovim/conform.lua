@@ -3,6 +3,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		-- Conform will run the first available formatter
 		javascript = { "prettierd", "prettier", stop_after_first = true },
+		nix = { "nixfmt" },
 	},
 })
 
