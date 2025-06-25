@@ -24,13 +24,16 @@
         wl-clipboard
 
         # LSP
+        # https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
         bash-language-server
         lua-language-server
         nil
 
         # Styles
+        #  :help conform-formatters
         nixfmt-rfc-style
         stylua
+        beautysh
       ];
 
       extraLuaConfig = ''
