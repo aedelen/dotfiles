@@ -32,10 +32,12 @@
         	-- Import files -- 
         	${builtins.readFile ./settings.lua}
         	${builtins.readFile ./conform.lua}
+        	${builtins.readFile ./lualine.lua}
+			-- LSP
         	vim.lsp.enable('lua_ls') 
         	vim.lsp.enable('nil_ls') 
         	-- End of extraLuaConfig --
-        '';
+      '';
 
       plugins = with pkgs.vimPlugins; [
         telescope-fzf-native-nvim
@@ -45,6 +47,7 @@
         mini-icons
         nvim-web-devicons
         conform-nvim # STYYYYYLE
+        lualine-nvim
 
         {
           plugin = (
