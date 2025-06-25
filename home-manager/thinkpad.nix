@@ -8,6 +8,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    neovim/neovim.nix
   ];
 
   home = {
@@ -25,8 +26,10 @@
     obsidian
     alacritty
     filezilla
-    neovim
   ];
+
+  # Enable neovim config
+  neovimModule.enable = true;
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
