@@ -16,11 +16,13 @@ vim.lsp.config['luals'] = {
 	-- defined by the server. For example the schema for
 	-- lua-language-server can be found here
 	-- https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json
-	settings = { 
-		Lua = { 
-			runtime = { 
-				version = 'LuaJIT', 
-			} 
-		} 
-	} 
+	settings = {
+		Lua = {
+			runtime = {
+				version = 'LuaJIT',
+			}
+		}
+	}
 }
+
+vim.lsp.enable('luals')

@@ -21,6 +21,7 @@
     #Put packages here
     #neovim
     #vimPlugins.telescope-nvim
+    #lua-language-server
   ];
   
   # Enable Neovim
@@ -37,7 +38,8 @@
       tree-sitter
       wl-clipboard
 
-      luajitPackages.lua-lsp
+      lua-language-server
+      luajit
     ];
 
     extraLuaConfig = ''
