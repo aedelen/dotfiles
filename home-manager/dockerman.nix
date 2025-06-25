@@ -48,8 +48,7 @@
       -- Import files --
       ${builtins.readFile neovim/init.lua}
       ${builtins.readFile neovim/lsp/luals.lua}
-      require("lspconfig").nil_ls.setup({})
-      vim.lsp.enable('nil')
+      vim.lsp.enable('nil_ls')
       -- End of extraLuaConfig --
 
     '';
