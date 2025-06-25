@@ -86,6 +86,11 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- Tab spacing
+vim.opt.tabstop = 4;
+vim.opt.softtabstop = 4;
+vim.opt.shiftwidth = 4;
+
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 

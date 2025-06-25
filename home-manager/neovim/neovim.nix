@@ -16,6 +16,7 @@
 				gcc 
 				tree-sitter
 				wl-clipboard
+				stylua
 			];
 
 			extraLuaConfig = '' 
@@ -23,6 +24,7 @@
 
 				-- Import files -- 
 				${builtins.readFile ./settings.lua}
+				${builtins.readFile ./conform.lua}
 				vim.lsp.enable('lua_ls') 
 				vim.lsp.enable('nil_ls') 
 				-- End of extraLuaConfig --
@@ -30,8 +32,12 @@
 
 			plugins = with pkgs.vimPlugins; [
 				telescope-fzf-native-nvim
-				telescope-ui-select-nvim tokyonight-nvim
-				nvim-lspconfig mini-icons nvim-web-devicons
+				telescope-ui-select-nvim 
+				tokyonight-nvim
+				nvim-lspconfig 
+				mini-icons 
+				nvim-web-devicons
+				conform-nvim #STYYYYYLE
 
 				{ 
 					plugin = (nvim-treesitter.withPlugins (p: [
