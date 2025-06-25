@@ -80,8 +80,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      neovim
-      git
+      #git
     ];
     # start systemd units on boot instead of login. Needed for Docker
     linger = true;

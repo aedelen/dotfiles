@@ -31,3 +31,7 @@ alias dm="matugen -v -m dark image ~/.config/backgrounds/animeHouse.jpg && refre
 alias rw="pkill -SIGUSR2 waybar"
 alias sw="waybar &"
 alias kw="pkill waybar"
+
+# Nixos
+alias nrt="nixos-rebuild test --use-remote-sudo"
+alias nrs="nixos-rebuild switch --use-remote-sudo"

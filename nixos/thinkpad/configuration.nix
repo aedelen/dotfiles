@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, inputs, pkgs, pkgs-unstable, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   imports =
@@ -106,7 +106,7 @@
       isNormalUser = true;
       description = "Test";
       extraGroups = [ "networkmanager" "input" ];
-      packages = [pkgs."discord" pkgs-unstable."gallery-dl"];
+      packages = [pkgs."discord"];
     };
   };
 
