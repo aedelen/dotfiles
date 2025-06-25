@@ -39,7 +39,7 @@
       wl-clipboard
 
       lua-language-server
-      luajit
+      nil #nix language server
     ];
 
     extraLuaConfig = ''
@@ -48,6 +48,8 @@
       -- Import files --
       ${builtins.readFile neovim/init.lua}
       ${builtins.readFile neovim/lsp/luals.lua}
+      require("lspconfig").nil_ls.setup({})
+      vim.lsp.enable('nil')
       -- End of extraLuaConfig --
 
     '';
@@ -56,6 +58,7 @@
 	telescope-fzf-native-nvim
 	telescope-ui-select-nvim
 	tokyonight-nvim
+	nvim-lspconfig
 
       {
         plugin = (nvim-treesitter.withPlugins (p: [
@@ -93,6 +96,7 @@
 	type = "lua";
       }
 
+      
     ];
 
   };
