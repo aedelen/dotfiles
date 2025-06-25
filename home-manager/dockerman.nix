@@ -46,7 +46,7 @@
       -- Write lua code here --
 
       -- Import files --
-      ${builtins.readFile neovim/init.lua}
+      ${builtins.readFile neovim/settings.lua}
       vim.lsp.enable('lua_ls')
       vim.lsp.enable('nil_ls')
       -- End of extraLuaConfig --
@@ -58,6 +58,8 @@
 	telescope-ui-select-nvim
 	tokyonight-nvim
 	nvim-lspconfig
+	mini-icons
+	nvim-web-devicons
 
       {
         plugin = (nvim-treesitter.withPlugins (p: [
