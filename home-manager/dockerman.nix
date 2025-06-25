@@ -98,6 +98,9 @@
     enable = true;
     userName= "Adam Edelen";
     userEmail = "aedelen42@gmail.com";
+	aliases = {
+			tree = "log --oneline --graph --decorate --all";
+		};
   };
 
   home.file = {
