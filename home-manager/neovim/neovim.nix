@@ -21,7 +21,6 @@
         fd
         gcc
         tree-sitter
-        wl-clipboard
 
         # LSP
         # https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
