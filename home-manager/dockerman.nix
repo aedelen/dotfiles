@@ -36,6 +36,8 @@
       gcc
       tree-sitter
       wl-clipboard
+
+      luajitPackages.lua-lsp
     ];
 
     extraLuaConfig = ''
@@ -43,6 +45,7 @@
 
       -- Import files --
       ${builtins.readFile neovim/init.lua}
+      ${builtins.readFile neovim/lsp/luals.lua}
       -- End of extraLuaConfig --
 
     '';
