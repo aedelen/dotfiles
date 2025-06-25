@@ -8,6 +8,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    neovim/neovim.nix
   ];
 
   home = {
@@ -23,84 +24,9 @@
     #vimPlugins.telescope-nvim
     #lua-language-server
   ];
-  
-  # Enable Neovim
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
 
-    extraPackages = with pkgs; [
-      ripgrep
-      fd
-      gcc
-      tree-sitter
-      wl-clipboard
-
-      lua-language-server
-      nil #nix language server
-    ];
-
-    extraLuaConfig = ''
-      -- Write lua code here --
-
-      -- Import files --
-      ${builtins.readFile neovim/settings.lua}
-      vim.lsp.enable('lua_ls')
-      vim.lsp.enable('nil_ls')
-      -- End of extraLuaConfig --
-
-    '';
-
-    plugins = with pkgs.vimPlugins; [
-	telescope-fzf-native-nvim
-	telescope-ui-select-nvim
-	tokyonight-nvim
-	nvim-lspconfig
-	mini-icons
-	nvim-web-devicons
-
-      {
-        plugin = (nvim-treesitter.withPlugins (p: [
-	  p.tree-sitter-nix
-	  p.tree-sitter-vim
-	  p.tree-sitter-bash
-	  p.tree-sitter-lua
-	  p.tree-sitter-json
-	]));
-	config = ''${builtins.readFile neovim/treesitter.lua}'';
-	type = "lua";
-      }
-
-      {
-        plugin = neo-tree-nvim;
-	config = ''${builtins.readFile neovim/neo-tree.lua}'';
-	type = "lua";
-      }
-
-      {
-	plugin = gitsigns-nvim;
-	config = ''${builtins.readFile neovim/gitsigns.lua}'';
-	type = "lua";
-      }
-
-      {
-	plugin = telescope-nvim;
-	config = ''${builtins.readFile neovim/telescope.lua}'';
-	type = "lua";
-      }
-
-      {
-	plugin = which-key-nvim;
-	config = ''${builtins.readFile neovim/which-key.lua}'';
-	type = "lua";
-      }
-
-      
-    ];
-
-  };
+  # Enable neovim module
+ neovimModule.enable = true; 
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
