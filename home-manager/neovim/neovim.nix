@@ -27,25 +27,28 @@
         bash-language-server
         lua-language-server
         nil
+        jdt-language-server
 
         # Styles
         #  :help conform-formatters
         nixfmt-rfc-style
         stylua
         beautysh
+        google-java-format
       ];
 
       extraLuaConfig = ''
-        -- Write lua code here --
-        -- Import files -- 
-        ${builtins.readFile ./settings.lua}
-        ${builtins.readFile ./conform.lua}
-        ${builtins.readFile ./lualine.lua}
-         -- LSP
-        vim.lsp.enable('lua_ls') 
-        vim.lsp.enable('nil_ls') 
-        vim.lsp.enable('bashls') 
-         -- End of extraLuaConfig --
+		-- Write lua code here --
+		-- Import files -- 
+		${builtins.readFile ./settings.lua}
+		${builtins.readFile ./conform.lua}
+		${builtins.readFile ./lualine.lua}
+		 -- LSP
+		vim.lsp.enable('lua_ls') 
+		vim.lsp.enable('nil_ls') 
+		vim.lsp.enable('bashls') 
+		vim.lsp.enable('jdtls')
+		 -- End of extraLuaConfig --
       '';
 
       plugins = with pkgs.vimPlugins; [
@@ -66,6 +69,7 @@
               p.tree-sitter-bash
               p.tree-sitter-lua
               p.tree-sitter-json
+              p.tree-sitter-java
             ])
           );
           config = ''${builtins.readFile ./treesitter.lua}'';
