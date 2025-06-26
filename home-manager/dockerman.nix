@@ -8,7 +8,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    neovim/neovim.nix
+		modules/home-manager-modules.nix
   ];
 
   home = {
@@ -25,19 +25,8 @@
     #lua-language-server
   ];
 
-  # Enable neovim module
- neovimModule.enable = true; 
-
-  # Enable home-manager and git
+  # Enable home-manager
   programs.home-manager.enable = true;
-  programs.git = {
-    enable = true;
-    userName= "Adam Edelen";
-    userEmail = "aedelen42@gmail.com";
-	aliases = {
-			tree = "log --oneline --graph --decorate --all";
-		};
-  };
 
   home.file = {
     ".config/nvim/init.lua".enable = false;
