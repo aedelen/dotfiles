@@ -23,32 +23,37 @@
         tree-sitter
 
         # LSP
+        # https://microsoft.github.io/language-server-protocol/implementors/servers/
         # https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
         bash-language-server
         lua-language-server
-        nil
+        nil # nix
         jdt-language-server
+        nodePackages.vscode-json-languageserver
 
         # Styles
         #  :help conform-formatters
-        nixfmt-rfc-style
+        nixfmt-rfc-style # nix
         stylua
-        beautysh
+        beautysh # bash
         google-java-format
+        jq # json
       ];
 
       extraLuaConfig = ''
-		-- Write lua code here --
-		-- Import files -- 
-		${builtins.readFile ./settings.lua}
-		${builtins.readFile ./conform.lua}
-		${builtins.readFile ./lualine.lua}
-		 -- LSP
-		vim.lsp.enable('lua_ls') 
-		vim.lsp.enable('nil_ls') 
-		vim.lsp.enable('bashls') 
-		vim.lsp.enable('jdtls')
-		 -- End of extraLuaConfig --
+        -- Write lua code here --
+        -- Import files -- 
+        ${builtins.readFile ./settings.lua}
+        ${builtins.readFile ./conform.lua}
+        ${builtins.readFile ./lualine.lua}
+        -- LSP
+        vim.lsp.enable('lua_ls') 
+        vim.lsp.enable('nil_ls') 
+        vim.lsp.enable('bashls') 
+        vim.lsp.enable('jdtls')
+        vim.lsp.enable('jdtls')
+        vim.lsp.enable('jsonls')
+        -- End of extraLuaConfig --
       '';
 
       plugins = with pkgs.vimPlugins; [
