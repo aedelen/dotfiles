@@ -1,12 +1,17 @@
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
-  imports = [./games.nix];
+  imports = [ ./games.nix ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     zsh
     rocmPackages.llvm.clang
     brightnessctl
@@ -21,7 +26,7 @@
     nodejs_22
     fzf
     fzf-zsh
-    jdk17
+    jdk
     maven
 
     # CLI Utilites
@@ -38,10 +43,10 @@
 
     # Hyprland
     waybar # system bar
-    wofi #app launcher
-    hyprshot #screenshots
-    swaynotificationcenter #recieve notifications
-    libnotify #send notifications
+    wofi # app launcher
+    hyprshot # screenshots
+    swaynotificationcenter # recieve notifications
+    libnotify # send notifications
     hyprlock # lockscreen
     hypridle # sleep
     hyprpaper # wallpaper
@@ -61,7 +66,6 @@
     usbutils
     udiskie
     udisks
-
 
     # Utilities
     bitwarden-desktop
