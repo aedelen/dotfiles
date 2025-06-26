@@ -29,6 +29,9 @@
     filezilla
   ];
 
+  # Play some games
+  games.enable = false;
+
   # Enable home-manager
   programs.home-manager.enable = true;
 

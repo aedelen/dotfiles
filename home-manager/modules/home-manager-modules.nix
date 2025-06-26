@@ -2,6 +2,7 @@
 {
   imports = [
     ./gitModule.nix
+    ./games.nix
     ../neovim/neovim.nix
   ];
   config = {
