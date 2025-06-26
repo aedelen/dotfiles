@@ -10,7 +10,7 @@
     #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager,  ... }: {
+  outputs = { nixpkgs, home-manager,  ... }: {
 
     nixosConfigurations = {
       thinkpad = nixpkgs.lib.nixosSystem {
