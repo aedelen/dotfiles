@@ -6,14 +6,14 @@
 
   config = lib.mkIf config.games.enable {
     environment.systemPackages = with pkgs; [
-	    # Games
-	    wineWowPackages.stagingFull 
-	    winetricks
-	    mgba
+      # Games
+      wineWowPackages.stagingFull
+      winetricks
+      mgba
       #xboxdrv
-	    mame-tools
-	    mupen64plus
-	    moonlight-qt
+      mame-tools
+      mupen64plus
+      moonlight-qt
     ];
   };
 }

@@ -35,3 +35,4 @@ alias kw="pkill waybar"
 # Nixos
 alias nrt="nixos-rebuild test --use-remote-sudo"
 alias nrs="nixos-rebuild switch --use-remote-sudo"
+alias nrdb="nixos-rebuild dry-build"
