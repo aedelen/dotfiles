@@ -146,6 +146,10 @@ tooltip label {
     border-radius: 10px 24px 10px 24px;
 }
 
+.modules-right #tray image {
+	margin: 0px 5px
+}
+
 .modules-right > widget:last-child {
   background: @tertiary_container;
   color: @on_tertiary_container;
