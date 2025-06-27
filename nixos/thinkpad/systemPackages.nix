@@ -21,7 +21,6 @@
     wev # Key id finder
 
     # Development Env
-    tmux
     nodejs_22
     fzf
     fzf-zsh
