@@ -55,6 +55,7 @@
     rofi # app launcher
     kanshi # monitor management
     pywalfox-native # Theme firefox
+    syncthingtray
 
     # Clipboard
     wl-clip-persist
