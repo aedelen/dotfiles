@@ -5,11 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../nixosModules/docker.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../nixosModules/docker.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -28,16 +28,23 @@
   # Set Static IP
   networking = {
     interfaces.ens3 = {
-      ipv4.addresses = [{
-        address = "192.168.1.26";
-        prefixLength = 24;
-      }];
+      ipv4.addresses = [
+        {
+          address = "192.168.1.26";
+          prefixLength = 24;
+        }
+      ];
     };
     defaultGateway = {
       address = "192.168.1.1";
     };
     firewall.enable = true;
-    firewall.allowedTCPPorts = [8000];
+    firewall.allowedTCPPorts = [
+      8000
+      8080
+      6881
+    ];
+    firewall.allowedUDPPorts = [ 6881 ];
   };
 
   # Set your time zone.
@@ -65,8 +72,11 @@
   };
 
   # Enable the Flakes feature and the accompanying new nix command-line tool
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Enable ZSH
   programs.zsh = {
     enable = true;
@@ -77,10 +87,14 @@
   users.users.adam = {
     isNormalUser = true;
     description = "Adam";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       #git
+      nfs-utils
     ];
     # start systemd units on boot instead of login. Needed for Docker
     linger = true;
@@ -92,8 +106,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
     ghostty.terminfo
   ];
 
@@ -111,6 +125,13 @@
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
+  };
+
+  boot.supportedFilesystems = [ "nfs" ];
+  networking.dhcpcd.allowSetuid = true;
+  fileSystems."/mnt/downloads" = {
+    device = "192.168.1.254:/mnt/HeroOfStorage/Media/Torrent";
+    fsType = "nfs4";
   };
 
   # Enable rootless Docker
