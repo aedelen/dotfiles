@@ -128,6 +128,11 @@
   };
 
   boot.supportedFilesystems = [ "nfs" ];
+  boot.initrd = {
+    supportedFilesystems = [ "nfs" ];
+    kernelModules = [ "nfs" ];
+  };
+
   networking.dhcpcd.allowSetuid = true;
   fileSystems."/mnt/downloads" = {
     device = "192.168.1.254:/mnt/HeroOfStorage/Media/Torrent";
