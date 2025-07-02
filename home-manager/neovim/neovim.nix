@@ -30,6 +30,7 @@
         nil # nix
         jdt-language-server
         nodePackages.vscode-json-languageserver
+        lemminx # xml
 
         # Styles
         #  :help conform-formatters
@@ -38,6 +39,7 @@
         beautysh # bash
         google-java-format
         jq # json
+        xmlstarlet
       ];
 
       extraLuaConfig = ''
@@ -52,6 +54,7 @@
         vim.lsp.enable('bashls')
         vim.lsp.enable('jdtls')
         vim.lsp.enable('jsonls')
+        vim.lsp.enable('lemminx')
         -- End of extraLuaConfig --
       '';
 
