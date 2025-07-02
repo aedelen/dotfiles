@@ -42,15 +42,14 @@
 
       extraLuaConfig = ''
         -- Write lua code here --
-        -- Import files -- 
+        -- Import files --
         ${builtins.readFile ./settings.lua}
         ${builtins.readFile ./conform.lua}
         ${builtins.readFile ./lualine.lua}
         -- LSP
-        vim.lsp.enable('lua_ls') 
-        vim.lsp.enable('nil_ls') 
-        vim.lsp.enable('bashls') 
-        vim.lsp.enable('jdtls')
+        vim.lsp.enable('lua_ls')
+        vim.lsp.enable('nil_ls')
+        vim.lsp.enable('bashls')
         vim.lsp.enable('jdtls')
         vim.lsp.enable('jsonls')
         -- End of extraLuaConfig --
