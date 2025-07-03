@@ -10,6 +10,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     modules/home-manager-modules.nix
+    modules/hyprland.nix
   ];
 
   home = {
@@ -34,6 +35,9 @@
 
   # Enable home-manager
   programs.home-manager.enable = true;
+
+  # Enable hyprland
+  hyprlandConfig.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.11";
