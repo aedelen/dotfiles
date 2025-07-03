@@ -48,6 +48,7 @@
         ${builtins.readFile ./settings.lua}
         ${builtins.readFile ./conform.lua}
         ${builtins.readFile ./lualine.lua}
+        ${builtins.readFile ./undo-tree.lua}
         -- LSP
         vim.lsp.enable('lua_ls')
         vim.lsp.enable('nil_ls')
@@ -67,6 +68,7 @@
         nvim-web-devicons
         conform-nvim # STYYYYYLE
         lualine-nvim
+        undotree
 
         {
           plugin = (
