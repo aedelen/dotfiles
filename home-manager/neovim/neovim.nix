@@ -63,14 +63,15 @@
         telescope-fzf-native-nvim
         telescope-ui-select-nvim
         tokyonight-nvim
-        nvim-lspconfig
+        nvim-lspconfig # https://github.com/neovim/nvim-lspconfig
         mini-icons
         nvim-web-devicons
         conform-nvim # STYYYYYLE
-        lualine-nvim
-        undotree
+        lualine-nvim # https://github.com/nvim-lualine/lualine.nvim
+        undotree # https://github.com/mbbill/undotree/
 
         {
+          # https://github.com/nvim-treesitter/nvim-treesitter/
           plugin = (
             nvim-treesitter.withPlugins (p: [
               p.tree-sitter-nix
@@ -86,24 +87,28 @@
         }
 
         {
+          # https://github.com/nvim-neo-tree/neo-tree.nvim/
           plugin = neo-tree-nvim;
           config = ''${builtins.readFile ./neo-tree.lua}'';
           type = "lua";
         }
 
         {
+          # https://github.com/lewis6991/gitsigns.nvim
           plugin = gitsigns-nvim;
           config = ''${builtins.readFile ./gitsigns.lua}'';
           type = "lua";
         }
 
         {
+          # https://github.com/nvim-telescope/telescope.nvim
           plugin = telescope-nvim;
           config = ''${builtins.readFile ./telescope.lua}'';
           type = "lua";
         }
 
         {
+          # https://github.com/folke/which-key.nvim/
           plugin = which-key-nvim;
           config = ''${builtins.readFile ./which-key.lua}'';
           type = "lua";
