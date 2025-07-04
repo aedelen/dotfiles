@@ -34,6 +34,7 @@
 
         # Styles
         #  :help conform-formatters
+        # Don't forget to add to conform.lua
         nixfmt-rfc-style # nix
         stylua
         beautysh # bash
@@ -53,7 +54,7 @@
         vim.lsp.enable('lua_ls')
         vim.lsp.enable('nil_ls')
         vim.lsp.enable('bashls')
-        vim.lsp.enable('jdtls')
+        -- vim.lsp.enable('jdtls')
         vim.lsp.enable('jsonls')
         vim.lsp.enable('lemminx')
         -- End of extraLuaConfig --
@@ -114,6 +115,15 @@
           type = "lua";
         }
 
+        {
+          # https://github.com/mfussenegger/nvim-jdtls/
+          plugin = nvim-jdtls;
+          config = ''
+            local jdtls_cmd = "${pkgs.jdt-language-server}/bin/jdtls"
+            ${builtins.readFile ./nvim-java.lua}
+          '';
+          type = "lua";
+        }
       ];
 
     };

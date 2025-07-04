@@ -5,6 +5,9 @@ require("conform").setup({
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		nix = { "nixfmt" },
 		bash = { "beautysh" },
+		java = { "google-java-format" },
+		json = { "jq" },
+		xml = { "xmlstarlet" },
 	},
 })
 
