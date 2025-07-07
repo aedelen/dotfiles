@@ -40,7 +40,6 @@ os.execute("cp -r " .. jdts_install .. "/share/java/jdtls/config_linux/* " .. jd
 -- vim.list_extend(bundles, test_bundles) TODO: Need to look into
 
 java_on_attach = function(client, bufnr)
-	attach_keymaps(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "<leader>jo", "<Cmd>lua require'jdtls'.organize_imports()<CR>", opts)
 	vim.keymap.set("n", "<leader>jrv", "<Cmd>lua require'jdtls'.extract_variable()<CR>", opts)
