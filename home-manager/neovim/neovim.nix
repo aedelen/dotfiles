@@ -54,7 +54,6 @@
         vim.lsp.enable('lua_ls')
         vim.lsp.enable('nil_ls')
         vim.lsp.enable('bashls')
-        -- vim.lsp.enable('jdtls')
         vim.lsp.enable('jsonls')
         vim.lsp.enable('lemminx')
         -- End of extraLuaConfig --
@@ -119,7 +118,7 @@
           # https://github.com/mfussenegger/nvim-jdtls/
           plugin = nvim-jdtls;
           config = ''
-            local jdtls_cmd = "${pkgs.jdt-language-server}/bin/jdtls"
+            local jdtls_dir = "${pkgs.jdt-language-server}"
             ${builtins.readFile ./nvim-java.lua}
           '';
           type = "lua";
