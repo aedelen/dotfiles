@@ -21,6 +21,8 @@
         fd
         gcc
         tree-sitter
+        jdk17
+        jdk
 
         # LSP
         # https://microsoft.github.io/language-server-protocol/implementors/servers/
@@ -118,7 +120,9 @@
           # https://github.com/mfussenegger/nvim-jdtls/
           plugin = nvim-jdtls;
           config = ''
-            local jdtls_dir = "${pkgs.jdt-language-server}"
+            local jdts_install = "${pkgs.jdt-language-server}"
+			local jdk_17 = "${pkgs.jdk17}"
+			local jdk_21 = "${pkgs.jdk}"
             ${builtins.readFile ./nvim-java.lua}
           '';
           type = "lua";
