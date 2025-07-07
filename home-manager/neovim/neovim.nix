@@ -118,11 +118,12 @@
 
         {
           # https://github.com/mfussenegger/nvim-jdtls/
+          # exmaple https://github.com/Gako358/neovim/blob/a0d0fda7ea5dfef1429f606013e4177554dd498a/modules/languages/java.nix#L41
           plugin = nvim-jdtls;
           config = ''
             local jdts_install = "${pkgs.jdt-language-server}"
-			local jdk_17 = "${pkgs.jdk17}"
-			local jdk_21 = "${pkgs.jdk}"
+            local jdk_17 = "${pkgs.jdk17}"
+            local jdk_21 = "${pkgs.jdk}"
             ${builtins.readFile ./nvim-java.lua}
           '';
           type = "lua";
