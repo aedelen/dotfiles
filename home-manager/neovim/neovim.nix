@@ -128,6 +128,12 @@
           '';
           type = "lua";
         }
+
+        {
+          plugin = blink-cmp;
+          config = ''${builtins.readFile ./blink-cmp.lua} '';
+          type = "lua";
+        }
       ];
 
     };
