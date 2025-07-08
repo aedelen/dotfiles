@@ -122,8 +122,8 @@
           plugin = nvim-jdtls;
           config = ''
             local jdts_install = "${pkgs.jdt-language-server}"
-            local jdk_17 = "${pkgs.jdk17}"
-            local jdk_21 = "${pkgs.jdk}"
+            local jdk_17_install = "${pkgs.jdk17}"
+            local jdk_21_install = "${pkgs.jdk}"
             ${builtins.readFile ./nvim-java.lua}
           '';
           type = "lua";

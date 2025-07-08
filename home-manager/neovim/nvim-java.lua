@@ -1,3 +1,5 @@
+-- several global variables are defined in neovim.nix
+---@diagnostic disable: undefined-global
 local home = os.getenv("HOME")
 local jdtls = require("jdtls")
 local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle", ".project" }
@@ -20,6 +22,7 @@ local jdtls_config_dir = home .. "/.config/jdtls_config"
 os.execute("mkdir -p " .. jdtls_config_dir)
 
 -- Copy from nix store to config dir
+---@diagnostic disable-next-line: undefined-global
 os.execute("cp -r " .. jdts_install .. "/share/java/jdtls/config_linux/* " .. jdtls_config_dir)
 
 -- Debuging
@@ -39,6 +42,7 @@ os.execute("cp -r " .. jdts_install .. "/share/java/jdtls/config_linux/* " .. jd
 -- vim.list_extend(bundles, debug_bundles)
 -- vim.list_extend(bundles, test_bundles) TODO: Need to look into
 
+---@diagnostic disable-next-line: lowercase-global, unused-local
 java_on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "<leader>jo", "<Cmd>lua require'jdtls'.organize_imports()<CR>", opts)
@@ -87,11 +91,11 @@ config.settings = {
 			runtimes = {
 				{
 					name = "JavaSE-17",
-					path = jdk_17 .. "/lib/openjdk/",
+					path = jdk_17_install .. "/lib/openjdk/",
 				},
 				{
 					name = "JavaSE-21",
-					path = jdk_21 .. "/lib/openjdk/",
+					path = jdk_21_install .. "/lib/openjdk/",
 				},
 			},
 		},
