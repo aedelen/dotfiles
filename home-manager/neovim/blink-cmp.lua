@@ -2,6 +2,7 @@
 ---@type blink.cmp.Config
 local blink_config = {
 	keymap = {
+		-- # https://cmp.saghen.dev/configuration/keymap.html#default
 		preset = "default",
 		["<C-k>"] = {},
 		-- can't figure out what show_signature does so I'm not sure it works
