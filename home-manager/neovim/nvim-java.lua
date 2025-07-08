@@ -60,7 +60,7 @@ local config = {
 	flags = {
 		allow_incremental_sync = true,
 	},
-	capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+	capabilities = require('blink.cmp').get_lsp_capabilities(capabilities),
 	on_attach = java_on_attach,
 }
 
