@@ -1,7 +1,12 @@
 ---@module 'blink.cmp'
 ---@type blink.cmp.Config
 local blink_config = {
-	keymap = { preset = "default" },
+	keymap = {
+		preset = "default",
+		["<C-k>"] = {},
+		-- can't figure out what show_signature does so I'm not sure it works
+		["<C-,>"] = { "show_signature", "hide_signature", "fallback" },
+	},
 	appearance = {
 		-- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 		-- Adjusts spacing to ensure icons are aligned
