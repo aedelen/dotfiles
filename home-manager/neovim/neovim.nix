@@ -130,6 +130,8 @@
         }
 
         {
+          # https://github.com/Saghen/blink.cmp
+          # https://cmp.saghen.dev/
           plugin = blink-cmp;
           config = ''${builtins.readFile ./blink-cmp.lua} '';
           type = "lua";
