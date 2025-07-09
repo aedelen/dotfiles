@@ -40,7 +40,6 @@
         nixfmt-rfc-style # nix
         stylua
         beautysh # bash
-        google-java-format
         jq # json
         xmlstarlet
       ];
