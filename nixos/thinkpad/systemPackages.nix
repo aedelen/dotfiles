@@ -2,6 +2,7 @@
   config,
   inputs,
   pkgs,
+  pkgs-syncthing,
   ...
 }:
 
@@ -9,6 +10,8 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  #environment.systemPackages = [ nixpkgs-syncthingtray.syncthingtray ];
+
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     zsh
@@ -54,7 +57,8 @@
     rofi # app launcher
     kanshi # monitor management
     pywalfox-native # Theme firefox
-    syncthingtray
+    #syncthingtray
+    pkgs-syncthing.syncthingtray
 
     # Clipboard
     wl-clip-persist

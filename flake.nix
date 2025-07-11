@@ -8,6 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Keeping syncthingtray 1.7.7 - in newer versions the pop up does not
+    # dismiss when window looses focus
+    nixpkgs-syncthingtray.url = "github:NixOS/nixpkgs/edb3633f9100d9277d1c9af245a4e9337a980c07";
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
@@ -16,14 +21,18 @@
       nixpkgs,
       home-manager,
       nixos-hardware,
+      nixpkgs-syncthingtray,
       ...
     }:
     {
-
       nixosConfigurations = {
-        thinkpad = nixpkgs.lib.nixosSystem {
+        thinkpad = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {
+            pkgs-syncthing = import nixpkgs-syncthingtray {
+              inherit system;
+              config.allowUnfree = true;
+            };
           };
           modules = [
             nixos/thinkpad/configuration.nix

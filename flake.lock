@@ -53,11 +53,28 @@
         "type": "github"
       }
     },
+    "nixpkgs-syncthingtray": {
+      "locked": {
+        "lastModified": 1748123162,
+        "narHash": "sha256-1fROmP+xlRkSiZ2bTH9JM6b4NUREhCerESEKQBKBkEw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "edb3633f9100d9277d1c9af245a4e9337a980c07",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "edb3633f9100d9277d1c9af245a4e9337a980c07",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-syncthingtray": "nixpkgs-syncthingtray"
       }
     }
   },
