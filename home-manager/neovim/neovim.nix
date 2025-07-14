@@ -24,6 +24,8 @@
         jdk17
         jdk
 
+        python313Packages.pylatexenc # used by render-markdown.nvim
+
         # LSP
         # https://microsoft.github.io/language-server-protocol/implementors/servers/
         # https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
@@ -81,6 +83,10 @@
               p.tree-sitter-lua
               p.tree-sitter-json
               p.tree-sitter-java
+              p.tree-sitter-markdown
+              p.tree-sitter-markdown-inline
+              p.tree-sitter-html
+              p.tree-sitter-latex
             ])
           );
           config = ''${builtins.readFile ./treesitter.lua}'';
@@ -133,6 +139,12 @@
           # https://cmp.saghen.dev/
           plugin = blink-cmp;
           config = ''${builtins.readFile ./blink-cmp.lua} '';
+          type = "lua";
+        }
+        {
+          # https://github.com/MeanderingProgrammer/render-markdown.nvim/
+          plugin = render-markdown-nvim;
+          config = ''${builtins.readFile ./render-markdown-nvim.lua} '';
           type = "lua";
         }
       ];
