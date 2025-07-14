@@ -11,6 +11,11 @@
       aliases = {
         tree = "log --oneline --graph --decorate --all";
       };
+      extraConfig = {
+        init = {
+          defaultBranch = "main";
+        };
+      };
     };
   };
 }
