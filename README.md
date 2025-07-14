@@ -18,10 +18,12 @@ Run ansible playbooks in PC_Setup
    ```bash
    fc-list|grep Nerd
    ```
+
 ### View list of all font names
 ```bash
     fc-list :lang=en:style=Regular family|sort|more
 ```
+
 ## Brightness controls
 ```sudo touch /etc/sudoers.d/brightness```
 
@@ -33,6 +35,7 @@ add the folloing line to it
 curl -L https://aka.ms/gcm/linux-install-source.sh | sh
 git-credential-manager configure
 ```
+
 ## Setting System Theme
 ```bash
 # light
@@ -49,6 +52,7 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
 ### Keycodes
 Determine name of keyboard key
 ``` xev ```
+
 ### Mod Keys
 List mod keys
 ```xmodmap```
