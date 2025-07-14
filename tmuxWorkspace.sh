@@ -11,7 +11,8 @@ if tmux has-session -t $session 2> /dev/null; then
 	tmux attach-session -t $session
 else
 	# Create session and start nvim
-	tmux new-session -d -s $session -n $wNvim nvim README.md
+	tmux new-session -d -s $session -n $wNvim
+	tmux send-keys -t $session 'nvim README.md' C-m
 	# extra shell ready for random stuff
 	tmux new-window -d -t $session -a -n $wShell
 	# attach to session
