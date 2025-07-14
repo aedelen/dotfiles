@@ -11,7 +11,7 @@
 
     # Keeping syncthingtray 1.7.7 - in newer versions the pop up does not
     # dismiss when window looses focus
-    nixpkgs-syncthingtray.url = "github:NixOS/nixpkgs/edb3633f9100d9277d1c9af245a4e9337a980c07";
+    nixpkgs-syncthingtray.url = "github:NixOS/nixpkgs/62462eb71a3a9a6490bce7b7d8a2ee7ab16ccf2e";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
