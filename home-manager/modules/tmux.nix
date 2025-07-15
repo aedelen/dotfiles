@@ -38,6 +38,9 @@
 
         # Enabling color support in tmux
         set-option -a terminal-features 'xterm-256color:RGB'
+
+		# Kill session
+		bind-key Q kill-session
       '';
     };
   };
