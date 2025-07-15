@@ -147,6 +147,12 @@
           config = ''${builtins.readFile ./render-markdown-nvim.lua} '';
           type = "lua";
         }
+        {
+          # https://github.com/obsidian-nvim/obsidian.nvim/
+          plugin = obsidian-nvim;
+          config = ''${builtins.readFile ./obsidian-nvim.lua} '';
+          type = "lua";
+        }
       ];
 
     };
