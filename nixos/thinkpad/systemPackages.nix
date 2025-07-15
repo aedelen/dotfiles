@@ -18,6 +18,7 @@
     rocmPackages.llvm.clang
     brightnessctl
     rhythmbox # music player
+    vlc
 
     #Keyboard
     #kanata
