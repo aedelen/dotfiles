@@ -15,6 +15,7 @@ local workspace_folder = home .. "/.cache/jdtls/" .. vim.fn.fnamemodify(root_dir
 -- Setting up root_dir
 local lspconfig = require("lspconfig")
 local function get_root_dir()
+---@diagnostic disable-next-line: deprecated
 	return lspconfig.util.root_pattern(unpack(root_markers))(vim.fn.expand("%:p:h"))
 end
 
