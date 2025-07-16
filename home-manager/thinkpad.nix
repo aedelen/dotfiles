@@ -1,6 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   # You can import other home-manager modules here
   imports = [
@@ -38,6 +38,10 @@
 
   # Enable hyprland
   hyprlandConfig.enable = true;
+
+  home.file = {
+    ".ssh/config".source = config.lib.file.mkOutOfStoreSymlink "/home/adam/.dotfiles/ssh/.ssh/config";
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.11";
