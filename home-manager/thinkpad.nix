@@ -39,8 +39,8 @@
   # Enable hyprland
   hyprlandConfig.enable = true;
 
-  home.file = {
-    ".ssh/config".source = config.lib.file.mkOutOfStoreSymlink "/home/adam/.dotfiles/ssh/.ssh/config";
+  home.file = let  symlink = config.lib.file.mkOutOfStoreSymlink;  in {
+    ".ssh/config".source = symlink "/home/adam/.dotfiles/ssh/.ssh/config";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
