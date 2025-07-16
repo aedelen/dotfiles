@@ -41,6 +41,7 @@
 
   home.file = let  symlink = config.lib.file.mkOutOfStoreSymlink;  in {
     ".ssh/config".source = symlink "/home/adam/.dotfiles/ssh/.ssh/config";
+	".config/kanshi/config".source = symlink config.home.homeDirectory + "/.dotfiles/kanshi/.config/kanshi/config";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
