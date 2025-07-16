@@ -14,6 +14,11 @@ require("obsidian").setup({
 			name = "personalNotes",
 			path = ws_root .. "PersonalNotes",
 		},
+		{
+			name = "chiron",
+			path = ws_root .. "PersonalNotes/Chiron",
+			strict = true,
+		},
 	},
 
 	-- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
@@ -61,7 +66,7 @@ require("obsidian").setup({
 
 -- Setup keymaps
 vim.keymap.set("n", "<leader>og", "<cmd>Obsidian search<cr>", { desc = "[O]bsidian [G]rep" })
-vim.keymap.set("n", "<leader>of", "<cmd>Obsidian quick_switch<cr>", { desc = "[O]bsidian Quick [S]witch" })
+vim.keymap.set("n", "<leader>of", "<cmd>Obsidian quick_switch<cr>", { desc = "[O]bsidian Quick [F]ind" })
 vim.keymap.set("n", "<leader>ow", "<cmd>Obsidian workspace<cr>", { desc = "[O]bsidian Switch [W]orkspace" })
 vim.keymap.set("n", "<leader>od", "<cmd>Obsidian dailies<cr>", { desc = "[O]bsidian Search [D]ailies" })
 vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian today<cr>", { desc = "[O]bsidian Open [T]oday" })
