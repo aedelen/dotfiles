@@ -39,10 +39,15 @@
   # Enable hyprland
   hyprlandConfig.enable = true;
 
-  home.file = let  symlink = config.lib.file.mkOutOfStoreSymlink;  in {
-    ".ssh/config".source = symlink "/home/adam/.dotfiles/ssh/.ssh/config";
-	".config/kanshi/config".source = symlink config.home.homeDirectory + "/.dotfiles/kanshi/.config/kanshi/config";
-  };
+  home.file =
+    let
+      symlink = config.lib.file.mkOutOfStoreSymlink;
+      dotfiles = config.home.homeDirectory + "/.dotfiles";
+    in
+    {
+      ".ssh/config".source = symlink dotfiles + "/ssh/.ssh/config";
+      ".config/kanshi/config".source = symlink dotfiles + "/kanshi/.config/kanshi/config";
+    };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.11";
