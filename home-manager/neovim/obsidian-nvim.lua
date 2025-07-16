@@ -71,4 +71,4 @@ vim.keymap.set("n", "<leader>ow", "<cmd>Obsidian workspace<cr>", { desc = "[O]bs
 vim.keymap.set("n", "<leader>od", "<cmd>Obsidian dailies<cr>", { desc = "[O]bsidian Search [D]ailies" })
 vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian today<cr>", { desc = "[O]bsidian Open [T]oday" })
 vim.keymap.set("n", "<leader>oT", "<cmd>Obsidian tomorrow<cr>", { desc = "[O]bsidian Open [T]omorrow" })
-vim.keymap.set("n", "<leader>op", "<cmd>Obsidian yesterday<cr>", { desc = "[O]bsidian [P]revious Dan" })
+vim.keymap.set("n", "<leader>op", "<cmd>Obsidian yesterday<cr>", { desc = "[O]bsidian [P]revious Day" })
