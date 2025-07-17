@@ -23,11 +23,12 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = false;
 
   # Set Static IP
   networking = {
     interfaces.enp5s0 = {
+      useDHCP = false;
       ipv4.addresses = [
         {
           address = "192.168.1.26";
@@ -38,6 +39,10 @@
     defaultGateway = {
       address = "192.168.1.1";
     };
+    nameservers = [
+      "8.8.8.8"
+      "8.8.4.4"
+    ];
     firewall.enable = true;
     firewall.allowedTCPPorts = [
       8000
@@ -135,6 +140,7 @@
 
   networking.dhcpcd.allowSetuid = true;
   fileSystems."/mnt/downloads" = {
+    enable = false;
     device = "192.168.1.254:/mnt/HeroOfStorage/Media/Torrent";
     fsType = "nfs4";
   };
