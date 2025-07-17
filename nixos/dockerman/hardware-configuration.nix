@@ -24,11 +24,6 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/mnt/downloads" =
-    { device = "192.168.1.254:/mnt/HeroOfStorage/Media/Torrent";
-      fsType = "nfs4";
-    };
-
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
