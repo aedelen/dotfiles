@@ -47,6 +47,7 @@
     {
       ".ssh/config".source = symlink dotfiles + "/ssh/.ssh/config";
       ".config/kanshi/config".source = symlink dotfiles + "/kanshi/.config/kanshi/config";
+      ".npmrc".source = symlink dotfiles + "/node/.npmrc";
     };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

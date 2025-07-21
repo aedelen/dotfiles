@@ -1,5 +1,8 @@
 INTELLIJ_HOME="/home/adam/Applications/Jetbrains/intellij"
 NVIM_HOME="/opt/nvim-linux64"
+NPM_GLOBAL="/home/adam/.npm-packages"
 
-export PATH="$PATH:$INTELLIJ_HOME/bin:$NVIM_HOME/bin"
+export NODE_PATH=~/.npm-packages/lib/node_modules
+
+export PATH="$PATH:$INTELLIJ_HOME/bin:$NVIM_HOME/bin:$NPM_GLOBAL/bin"
 
