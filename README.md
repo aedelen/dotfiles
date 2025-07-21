@@ -10,5 +10,3 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Pop'
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
 ```
-
-Whatever I want
