@@ -23,6 +23,7 @@
         tree-sitter
         jdk17
         jdk
+        prettierd
 
         python313Packages.pylatexenc # used by render-markdown.nvim
 
@@ -35,6 +36,7 @@
         jdt-language-server
         nodePackages.vscode-json-languageserver
         lemminx # xml
+        angular-language-server
 
         # Styles
         #  :help conform-formatters
@@ -59,6 +61,7 @@
         vim.lsp.enable('bashls')
         vim.lsp.enable('jsonls')
         vim.lsp.enable('lemminx')
+        vim.lsp.enable('angularls')
         -- End of extraLuaConfig --
       '';
 
