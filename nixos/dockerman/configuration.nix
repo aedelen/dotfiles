@@ -9,6 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../nixosModules/docker.nix
+    ../nixosModules/podman.nix
   ];
 
   # Bootloader.
@@ -95,11 +96,12 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "podman"
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       #git
-      nfs-utils
+      fuse-overlayfs
     ];
     # start systemd units on boot instead of login. Needed for Docker
     linger = true;
@@ -114,6 +116,7 @@
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     ghostty.terminfo
+    nfs-utils
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -140,14 +143,21 @@
 
   networking.dhcpcd.allowSetuid = true;
   fileSystems."/mnt/downloads" = {
-    enable = false;
+    enable = true;
     device = "192.168.1.254:/mnt/HeroOfStorage/Media/Torrent";
+    fsType = "nfs4";
+  };
+  fileSystems."/mnt/nginx" = {
+    enable = false;
+    device = "192.168.1.254:/mnt/HeroOfStorage/Docker/NginxProxyManager2";
     fsType = "nfs4";
   };
 
   # Enable rootless Docker
-  dockerModule.enable = true;
-  systemd.user.services.docker.wantedBy = [ "multi-user.target" ];
+  dockerModule.enable = false;
+  # systemd.user.services.docker.wantedBy = [ "multi-user.target" ];
+
+  podmanModule.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
