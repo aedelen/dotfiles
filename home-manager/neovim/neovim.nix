@@ -158,10 +158,7 @@
         (lib.mkIf config.neovimModule.obsidianSupport {
           # https://github.com/obsidian-nvim/obsidian.nvim/
           plugin = obsidian-nvim;
-          config = ''
-            require("which-key").add({{ "<leader>o", group = "[O]bsidian" },})
-            ${builtins.readFile ./obsidian-nvim.lua} 
-          '';
+          config = '' ${builtins.readFile ./obsidian-nvim.lua} '';
           type = "lua";
         })
       ];
