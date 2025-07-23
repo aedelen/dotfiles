@@ -1,6 +1,7 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
@@ -8,7 +9,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-		modules/home-manager-modules.nix
+    modules/home-manager-modules.nix
   ];
 
   home = {
@@ -34,6 +35,7 @@
     #".config/nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink "/home/adam/.dotfiles/nvim/.config/nvim/init.lua";
   };
 
+  neovimModule.obsidianSupport = false;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.05";

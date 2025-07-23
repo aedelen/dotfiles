@@ -7,6 +7,11 @@
 {
   options = {
     neovimModule.enable = lib.mkEnableOption "enables Neovim module";
+    neovimModule.obsidianSupport = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "enables Obsidian support in neovim";
+    };
   };
   config = lib.mkIf config.neovimModule.enable {
     # Enable Neovim
@@ -150,12 +155,15 @@
           config = ''${builtins.readFile ./render-markdown-nvim.lua} '';
           type = "lua";
         }
-        {
+        (lib.mkIf config.neovimModule.obsidianSupport {
           # https://github.com/obsidian-nvim/obsidian.nvim/
           plugin = obsidian-nvim;
-          config = ''${builtins.readFile ./obsidian-nvim.lua} '';
+          config = ''
+            require("which-key").add({{ "<leader>o", group = "[O]bsidian" },})
+            ${builtins.readFile ./obsidian-nvim.lua} 
+          '';
           type = "lua";
-        }
+        })
       ];
 
     };
