@@ -98,3 +98,4 @@ vim.keymap.set("n", "<leader>oT", "<cmd>Obsidian tomorrow<cr>", { desc = "[O]bsi
 vim.keymap.set("n", "<leader>op", "<cmd>Obsidian yesterday<cr>", { desc = "[O]bsidian [P]revious Day" })
 vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new<cr>", { desc = "[O]bsidian [N]ew Note" })
 vim.keymap.set("n", "<leader>oN", "<cmd>Obsidian new<cr><cr>", { desc = "[O]bsidian Quick [N]ew Note" })
+vim.keymap.set("n", "<leader>oq", "<cmd>Obsidian <cr>", { desc = "[O]bsidian [Q]uick Menu" })
