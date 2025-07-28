@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   options = {
     gitModule.enable = lib.mkEnableOption "enables personal git config";
@@ -8,6 +13,7 @@
       enable = true;
       userName = "Adam Edelen";
       userEmail = "aedelen42@gmail.com";
+      package = pkgs.gitFull;
       aliases = {
         tree = "log --oneline --graph --decorate --all";
       };
@@ -15,6 +21,7 @@
         init = {
           defaultBranch = "main";
         };
+        credential.helper = "libsecret";
       };
     };
   };
