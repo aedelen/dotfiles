@@ -19,6 +19,10 @@ require("obsidian").setup({
 			path = ws_root .. "PersonalNotes/Chiron",
 			strict = true,
 		},
+		{
+			name = "Numenera",
+			path = ws_root .. "Numenera",
+		}
 	},
 
 	notes_subdir = "Notes",
