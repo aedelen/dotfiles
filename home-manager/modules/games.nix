@@ -6,7 +6,7 @@
 
   config = lib.mkIf config.gamesModule.enable {
     home.packages = with pkgs; [
-      wineWowPackages.stagingFull
+      wineWowPackages.waylandFull
       winetricks
       mgba
       mame-tools
