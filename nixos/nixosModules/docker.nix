@@ -6,7 +6,7 @@
   config = lib.mkIf config.dockerModule.enable {
     # Enable rootless Docker
     virtualisation.docker = {
-      enable = false;
+      enable = true;
       rootless = {
           enable = true;
           setSocketVariable = true;

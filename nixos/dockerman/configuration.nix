@@ -97,11 +97,11 @@
       "networkmanager"
       "wheel"
       "podman"
+      "docker"
     ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       #git
-      fuse-overlayfs
     ];
     # start systemd units on boot instead of login. Needed for Docker
     linger = true;
@@ -118,6 +118,7 @@
     ghostty.terminfo
     nfs-utils
     btop
+    fuse-overlayfs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -155,10 +156,10 @@
   };
 
   # Enable rootless Docker
-  dockerModule.enable = false;
+  dockerModule.enable = true;
   # systemd.user.services.docker.wantedBy = [ "multi-user.target" ];
 
-  podmanModule.enable = true;
+  podmanModule.enable = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
