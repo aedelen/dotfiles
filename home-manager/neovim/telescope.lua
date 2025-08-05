@@ -21,6 +21,8 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
 vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "[F]ind [K]eymaps" })
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "[F]ind live [G]rep" })
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {desc = "[F]ind [F]iles"})
+vim.keymap.set("n", "<leader>fs", builtin.lsp_dynamic_workspace_symbols, {desc = "[F]ind Workspace [S]ymbols"})
+vim.keymap.set("n", "gO", builtin.lsp_document_symbols, {desc = "Document Symbols"})
 
 
 require("telescope").load_extension("ui-select")
