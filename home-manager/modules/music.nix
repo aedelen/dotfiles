@@ -13,8 +13,6 @@
     home.packages = with pkgs; [
       # UI
       rhythmbox
-      sayonara
-      amberol
 
       # Terminal
       cmus
