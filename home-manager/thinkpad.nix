@@ -39,6 +39,9 @@
   # Enable home-manager
   programs.home-manager.enable = true;
 
+  musicModule.enable = true;
+  readingModule.enable = true;
+
   # Enable hyprland
   hyprlandConfig.enable = true;
 
