@@ -152,7 +152,7 @@
   ];
 
   # Enable rootless Docker
-  dockerModule.enable = true;
+  dockerModule.enable = false;
 
   # Enable Hyprland
   programs.hyprland.enable = true;
