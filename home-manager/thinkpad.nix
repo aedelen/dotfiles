@@ -52,7 +52,7 @@
     in
     {
       ".ssh/config".source = symlink dotfiles + "/ssh/.ssh/config";
-      ".config/kanshi/config".source = symlink dotfiles + "/kanshi/.config/kanshi/config";
+      ".config/kanshi/config".source = ../kanshi/.config/kanshi/config;
       ".npmrc".source = symlink dotfiles + "/node/.npmrc";
     };
 
