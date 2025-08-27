@@ -95,6 +95,7 @@
               p.tree-sitter-markdown-inline
               p.tree-sitter-html
               p.tree-sitter-latex
+              p.tree-sitter-http
             ])
           );
           config = ''${builtins.readFile ./treesitter.lua}'';
@@ -158,9 +159,19 @@
         (lib.mkIf config.neovimModule.obsidianSupport {
           # https://github.com/obsidian-nvim/obsidian.nvim/
           plugin = obsidian-nvim;
-          config = '' ${builtins.readFile ./obsidian-nvim.lua} '';
+          config = ''${builtins.readFile ./obsidian-nvim.lua} '';
           type = "lua";
         })
+        {
+          # https://github.com/rest-nvim/rest.nvim/tree/main
+          plugin = rest-nvim;
+          config = ''
+            vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "[R]est [R]un" })
+            vim.keymap.set("n", "<leader>ro", "<cmd>Rest open<cr>", { desc = "[R]est [O]pen" })
+            vim.keymap.set("n", "<leader>rl", "<cmd>Rest logs<cr>", { desc = "[R]est [L]ogs" })
+          '';
+          type = "lua";
+        }
       ];
 
     };
