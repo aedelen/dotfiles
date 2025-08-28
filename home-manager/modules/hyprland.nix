@@ -7,13 +7,13 @@
   config = lib.mkIf config.hyprlandConfig.enable {
     home.file."waybarConfigFiles" = {
       enable = true;
-      source = ../../waybar/.config/waybar;
+      source = config.lib.file.mkOutOfStoreSymlink /home/adam/.dotfiles/waybar/.config/waybar;
       recursive = false;
       target = ".config/waybar";
     };
     home.file."hyprlandConfigFiles" = {
       enable = true;
-      source = ../../hyprland/.config/hypr;
+      source = config.lib.file.mkOutOfStoreSymlink /home/adam/.dotfiles/hyprland/.config/hypr;
       recursive = false;
       target = ".config/hypr";
     };
