@@ -166,9 +166,12 @@
           # https://github.com/rest-nvim/rest.nvim/tree/main
           plugin = rest-nvim;
           config = ''
+            require("telescope").load_extension("rest")
+            local select_env = require("telescope").extensions.rest.select_env
             vim.keymap.set("n", "<leader>rr", "<cmd>Rest run<cr>", { desc = "[R]est [R]un" })
             vim.keymap.set("n", "<leader>ro", "<cmd>Rest open<cr>", { desc = "[R]est [O]pen" })
             vim.keymap.set("n", "<leader>rl", "<cmd>Rest logs<cr>", { desc = "[R]est [L]ogs" })
+            vim.keymap.set("n", "<leader>re", select_env, { desc = "[R]est [E]nviroment" })
           '';
           type = "lua";
         }
