@@ -28,9 +28,6 @@
     obsidian
     alacritty
     filezilla
-    calibre
-    mcomix
-    yacreader
   ];
 
   # Play some games
