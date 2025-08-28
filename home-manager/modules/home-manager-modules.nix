@@ -7,11 +7,13 @@
     ./tmux.nix
     ./music.nix
     ./reading.nix
+		./systemUtilities.nix
   ];
   config = {
     gitModule.enable = lib.mkDefault true;
     neovimModule.enable = lib.mkDefault true;
     tmuxModule.enable = lib.mkDefault true;
+    systemUtilModule.enable = lib.mkDefault true;
 
     musicModule.enable = lib.mkDefault false;
     readingModule.enable = lib.mkDefault false;
