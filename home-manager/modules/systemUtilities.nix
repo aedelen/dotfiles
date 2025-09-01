@@ -14,6 +14,7 @@
       # System Monitoring
       btop
       htop
+      duf
 
       # REST TUI
       posting

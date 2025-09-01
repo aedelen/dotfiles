@@ -37,10 +37,6 @@
     curl
     unzip
 
-    # System monitoring
-    htop
-    btop
-    duf
 
     # Hyprland
     waybar # system bar
