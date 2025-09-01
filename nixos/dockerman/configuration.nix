@@ -107,6 +107,16 @@
     linger = true;
   };
 
+  users.users.media = {
+    isNormalUser = false;
+    isSystemUser = true;
+    uid = 3004;
+    group = "media";
+  };
+  users.groups.media = {
+    gid = 3003;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -143,6 +153,10 @@
     kernelModules = [ "nfs" ];
   };
 
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = false;
+
   networking.dhcpcd.allowSetuid = true;
   fileSystems."/mnt/downloads" = {
     enable = true;
@@ -154,12 +168,33 @@
     device = "192.168.1.254:/mnt/HeroOfStorage/Docker/NginxProxyManager2";
     fsType = "nfs4";
   };
+  fileSystems."/mnt/videos" = {
+    enable = false;
+    device = "192.168.1.254:/mnt/HeroOfStorage/Media/Video";
+    fsType = "nfs4";
+  };
+  fileSystems."/mnt/movies" = {
+    enable = true;
+    device = "192.168.1.254:/mnt/HeroOfStorage/Media/Video/Movie";
+    fsType = "nfs4";
+  };
+  fileSystems."/mnt/tv" = {
+    enable = true;
+    device = "192.168.1.254:/mnt/HeroOfStorage/Media/Video/TV";
+    fsType = "nfs4";
+  };
 
   # Enable rootless Docker
   dockerModule.enable = true;
   # systemd.user.services.docker.wantedBy = [ "multi-user.target" ];
 
   podmanModule.enable = false;
+
+  services.plex = {
+    enable = true;
+    openFirewall = true;
+    user = "media";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

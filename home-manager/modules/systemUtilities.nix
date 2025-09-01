@@ -15,6 +15,7 @@
       btop
       htop
       duf
+      pciutils
 
       # REST TUI
       posting
