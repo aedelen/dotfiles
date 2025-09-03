@@ -3,6 +3,7 @@ alias dl="cd ~/Downloads"
 alias ws="cd ~/workspace"
 alias dt="cd ~/.dotfiles"
 alias {doc,docs}="cd ~/Documents"
+alias st="cd ~/Documents/syncthing/"
 
 #Common
 alias la="ls -laFh"
