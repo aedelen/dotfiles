@@ -8,8 +8,15 @@ prompt agnoster
 
 source ~/.config/zsh/theme/zshcolors
 
-# Aliases
-source ~/.aliases
+if [ -f ~/.aliases ]; then
+	# Aliases
+	source ~/.aliases
+fi
+
+if [ -f ~/.functions ]; then
+	# Functions
+	source ~/.functions
+fi
 
 # Turn off vim mode in terminal
 bindkey -e # enable emacs mode

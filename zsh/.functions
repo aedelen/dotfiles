@@ -1,0 +1,35 @@
+tmux-workspace () {
+	# Get current directory name
+	SESSION_NAME=$(basename "$PWD")
+
+	# Check if the session already exists
+	if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+		echo "Session '$SESSION_NAME' already exists. Attaching..."
+		tmux attach -t "$SESSION_NAME"
+		exit 0
+	fi
+
+	# Start a new tmux session with the first window named "neovim"
+	tmux new-session -d -s "$SESSION_NAME" -n Neovim "nvim README.md"
+
+	# If pom.xml exists, create a "Spring" window running mvn spring-boot:run
+	if [[ -f "pom.xml" ]]; then
+		tmux new-window -t "$SESSION_NAME:" -n Spring "mvn spring-boot:run"
+	fi
+
+	# If package.json exists, create a "Node" window running npm start
+	if [[ -f "package.json" ]]; then
+		tmux new-window -t "$SESSION_NAME:" -n Node "npm start"
+	fi
+
+	# Just a shell for running commands in
+	tmux new-window -t "$SESSION_NAME:"
+
+	# Ensure we attach to the neovim window (window 1)
+	tmux select-window -t "$SESSION_NAME:1"
+
+	# Attach to the new session
+	tmux attach -t "$SESSION_NAME"
+}
+
+alias {tws,tcob,tcb}="tmux-workspace"
