@@ -33,3 +33,11 @@ tmux-workspace () {
 }
 
 alias {tws,tcob,tcb}="tmux-workspace"
+
+help () {
+	echo "Some helpful TUI applications"
+	echo "yazi - file manager"
+	echo "posting - REST testing"
+	echo "lazygit - git client"
+	echo "musikcube - music player"
+}
