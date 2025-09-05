@@ -2,6 +2,9 @@ tmux-workspace () {
 	# Get current directory name
 	SESSION_NAME=$(basename "$PWD")
 
+	# Remove leading dot if present
+	SESSION_NAME="${SESSION_NAME#.}"
+
 	# Check if the session already exists
 	if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
 		echo "Session '$SESSION_NAME' already exists. Attaching..."
