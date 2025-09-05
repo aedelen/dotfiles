@@ -7,7 +7,7 @@
     ./tmux.nix
     ./music.nix
     ./reading.nix
-		./systemUtilities.nix
+    ./systemUtilities.nix
   ];
   config = {
     gitModule.enable = lib.mkDefault true;
