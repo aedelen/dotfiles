@@ -13,7 +13,8 @@ tmux-workspace () {
 	fi
 
 	# Start a new tmux session with the first window named "neovim"
-	tmux new-session -d -s "$SESSION_NAME" -n Neovim "nvim README.md"
+	tmux new-session -d -s "$SESSION_NAME" -n Neovim
+	tmux send-keys -t "$SESSION_NAME" 'nvim README.md' C-m
 
 	# If pom.xml exists, create a "Spring" window running mvn spring-boot:run
 	if [[ -f "pom.xml" ]]; then
