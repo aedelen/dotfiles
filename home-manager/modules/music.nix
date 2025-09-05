@@ -20,7 +20,11 @@
       musikcube
 
       rmpc
-      mpd #daemon for rmpc
+      mpd # daemon for rmpc
     ];
+    services.mpd = {
+      enable = true;
+      musicDirectory = config.home.homeDirectory + "/Music";
+    };
   };
 }
