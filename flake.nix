@@ -14,6 +14,7 @@
     nixpkgs-syncthingtray.url = "github:NixOS/nixpkgs/62462eb71a3a9a6490bce7b7d8a2ee7ab16ccf2e";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixpkgs-jetbrains.url = "github:NixOS/nixpkgs/f02fa2f654c7bcc45f0e815c29d093da7f1245b4";
   };
 
   outputs =
@@ -22,6 +23,7 @@
       home-manager,
       nixos-hardware,
       nixpkgs-syncthingtray,
+      nixpkgs-jetbrains,
       ...
     }:
     {
@@ -42,6 +44,12 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.adam = import ./home-manager/thinkpad.nix;
+              home-manager.extraSpecialArgs = {
+                pkgs-jetbrains = import nixpkgs-jetbrains {
+                  inherit system;
+                  config.allowUnfree = true;
+                };
+              };
             }
           ];
         };

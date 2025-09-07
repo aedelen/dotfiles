@@ -31,7 +31,7 @@
   ];
 
   # Play some games
-  gamesModule.enable = true;
+  gamesModule.enable = false;
 
   # Enable home-manager
   programs.home-manager.enable = true;
@@ -42,6 +42,8 @@
   # Enable hyprland
   hyprlandConfig.enable = true;
 
+  # Install Jetbrains IDEs
+  jetbrainsModule.enable = true;
   home.file =
     let
       symlink = config.lib.file.mkOutOfStoreSymlink;

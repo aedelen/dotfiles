@@ -8,6 +8,7 @@
     ./music.nix
     ./reading.nix
     ./systemUtilities.nix
+    ./jetbrains.nix
   ];
   config = {
     gitModule.enable = lib.mkDefault true;
@@ -18,5 +19,6 @@
     musicModule.enable = lib.mkDefault false;
     readingModule.enable = lib.mkDefault false;
     gamesModule.enable = lib.mkDefault false;
+    jetbrainsModule.enable = lib.mkDefault false;
   };
 }
