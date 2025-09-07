@@ -28,6 +28,7 @@
     obsidian
     alacritty
     filezilla
+    gitkraken
   ];
 
   # Play some games
