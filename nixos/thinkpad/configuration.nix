@@ -167,7 +167,7 @@
 
 	# Install Steam
     programs.steam = {
-		enable = true;
+		enable = false;
 		# translate X11 input events to uinput events
 		extest.enable = true;
 	};
