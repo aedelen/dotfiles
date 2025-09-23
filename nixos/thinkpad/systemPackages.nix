@@ -3,6 +3,7 @@
   inputs,
   pkgs,
   pkgs-syncthing,
+  pkgs-unstable,
   ...
 }:
 
@@ -37,7 +38,6 @@
     curl
     unzip
 
-
     # Hyprland
     waybar # system bar
     wofi # app launcher
@@ -52,7 +52,6 @@
     matugen # gen theme based on image
     rofi # app launcher
     kanshi # monitor management
-    pywalfox-native # Theme firefox
     #syncthingtray
     pkgs-syncthing.syncthingtray
 

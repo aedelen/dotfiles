@@ -7,7 +7,7 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Keeping syncthingtray 1.7.7 - in newer versions the pop up does not
     # dismiss when window looses focus
@@ -24,6 +24,7 @@
       nixos-hardware,
       nixpkgs-syncthingtray,
       nixpkgs-jetbrains,
+      nixpkgs-unstable,
       ...
     }:
     {
@@ -32,6 +33,10 @@
           system = "x86_64-linux";
           specialArgs = {
             pkgs-syncthing = import nixpkgs-syncthingtray {
+              inherit system;
+              config.allowUnfree = true;
+            };
+            pkgs-unstable = import nixpkgs-unstable {
               inherit system;
               config.allowUnfree = true;
             };
