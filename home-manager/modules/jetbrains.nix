@@ -14,6 +14,7 @@
     home.packages = with pkgs-jetbrains; [
       jetbrains.idea-ultimate
       jetbrains.webstorm
+      jetbrains.goland
     ];
   };
 }

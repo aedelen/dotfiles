@@ -14,6 +14,12 @@
     };
   };
   config = lib.mkIf config.neovimModule.enable {
+
+    home.packages = with pkgs; [
+      go
+      air # Live reload of go apps
+    ];
+
     # Enable Neovim
     programs.neovim = {
       enable = true;
@@ -42,6 +48,7 @@
         nodePackages.vscode-json-languageserver
         lemminx # xml
         angular-language-server
+        gopls
 
         # Styles
         #  :help conform-formatters
@@ -67,6 +74,7 @@
         vim.lsp.enable('jsonls')
         vim.lsp.enable('lemminx')
         vim.lsp.enable('angularls')
+        vim.lsp.enable('gopls')
         -- End of extraLuaConfig --
       '';
 
@@ -96,6 +104,7 @@
               p.tree-sitter-html
               p.tree-sitter-latex
               p.tree-sitter-http
+              p.tree-sitter-go
             ])
           );
           config = ''${builtins.readFile ./treesitter.lua}'';

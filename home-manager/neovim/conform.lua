@@ -7,6 +7,7 @@ require("conform").setup({
 		bash = { "beautysh" },
 		json = { "jq" },
 		xml = { "xmlstarlet" },
+		go = { "gofmt" },
 	},
 })
 
