@@ -49,6 +49,8 @@
         lemminx # xml
         angular-language-server
         gopls
+        vscode-langservers-extracted # html
+        htmx-lsp
 
         # Styles
         #  :help conform-formatters
@@ -75,6 +77,8 @@
         vim.lsp.enable('lemminx')
         vim.lsp.enable('angularls')
         vim.lsp.enable('gopls')
+        vim.lsp.enable('html')
+        vim.lsp.enable('htmx')
         -- End of extraLuaConfig --
       '';
 
@@ -105,6 +109,8 @@
               p.tree-sitter-latex
               p.tree-sitter-http
               p.tree-sitter-go
+              p.tree-sitter-css
+              p.tree-sitter-javascript
             ])
           );
           config = ''${builtins.readFile ./treesitter.lua}'';
