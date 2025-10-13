@@ -2,17 +2,23 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./systemPackages.nix
-      ./nixos-keyboard.nix
-      ../nixosModules/docker.nix
-      #<home-manager/nixos>
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./systemPackages.nix
+    ./nixos-keyboard.nix
+    ../nixosModules/docker.nix
+    #<home-manager/nixos>
+    ../nixosModules/podman.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -98,18 +104,25 @@
       isNormalUser = true;
       description = "Adam";
       shell = pkgs.zsh;
-      extraGroups = [ "networkmanager" "wheel" "input" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "input"
+        "podman"
+      ];
       packages = with pkgs; [
       ];
     };
     test = {
       isNormalUser = true;
       description = "Test";
-      extraGroups = [ "networkmanager" "input" ];
-      packages = [pkgs."discord"];
+      extraGroups = [
+        "networkmanager"
+        "input"
+      ];
+      packages = [ pkgs."discord" ];
     };
   };
-
 
   #environment.systemPackages = with pkgs-unstable; [
   #  neovim
@@ -121,7 +134,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -143,7 +159,7 @@
   # networking.firewall.enable = false;
 
   # Install Nerdfonts
-  fonts.packages = with pkgs; [ 
+  fonts.packages = with pkgs; [
     nerd-fonts.geist-mono
     nerd-fonts.commit-mono
     nerd-fonts.dejavu-sans-mono
@@ -153,6 +169,7 @@
 
   # Enable rootless Docker
   dockerModule.enable = false;
+  podmanModule.enable = true;
 
   # Enable Hyprland
   programs.hyprland.enable = true;
@@ -165,25 +182,27 @@
     openDefaultPorts = true;
   };
 
-	# Install Steam
-    programs.steam = {
-		enable = false;
-		# translate X11 input events to uinput events
-		extest.enable = true;
-	};
+  # Install Steam
+  programs.steam = {
+    enable = false;
+    # translate X11 input events to uinput events
+    extest.enable = true;
+  };
 
   # Configure local domains
   networking.hosts = {
-    "192.168.1.254" = ["adamnas.local"];
-    "192.168.1.197" = ["onion.local"];
-    "192.168.1.26" = ["dockerman.local" "dockerman"];
+    "192.168.1.254" = [ "adamnas.local" ];
+    "192.168.1.197" = [ "onion.local" ];
+    "192.168.1.26" = [
+      "dockerman.local"
+      "dockerman"
+    ];
   };
 
   # Automount USB Drives
   services.devmon.enable = true;
-  services.gvfs.enable = true; 
+  services.gvfs.enable = true;
   services.udisks2.enable = true;
-  
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
