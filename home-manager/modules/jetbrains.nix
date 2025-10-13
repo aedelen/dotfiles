@@ -15,6 +15,7 @@
       jetbrains.idea-ultimate
       jetbrains.webstorm
       jetbrains.goland
+      jetbrains.datagrip
     ];
   };
 }
