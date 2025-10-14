@@ -14,10 +14,10 @@
     };
   };
   config = lib.mkIf config.neovimModule.enable {
-
     home.packages = with pkgs; [
       go
       air # Live reload of go apps
+      templ
     ];
 
     # Enable Neovim
@@ -79,6 +79,7 @@
         vim.lsp.enable('gopls')
         vim.lsp.enable('html')
         vim.lsp.enable('htmx')
+		vim.lsp.enable('templ')
         -- End of extraLuaConfig --
       '';
 
@@ -111,6 +112,7 @@
               p.tree-sitter-go
               p.tree-sitter-css
               p.tree-sitter-javascript
+              p.tree-sitter-templ
             ])
           );
           config = ''${builtins.readFile ./treesitter.lua}'';

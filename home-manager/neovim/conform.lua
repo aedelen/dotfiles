@@ -8,6 +8,7 @@ require("conform").setup({
 		json = { "jq" },
 		xml = { "xmlstarlet" },
 		go = { "gofmt" },
+		templ = { "templ" },
 	},
 })
 
