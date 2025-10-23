@@ -14,4 +14,4 @@
 [init]
 	defaultBranch = main
 [alias]
-	tree = log --oneline --graph --decorate --all
+	tree = log --graph --all --format="%Cblue%ae%n %Cgreen%h %Creset%s"

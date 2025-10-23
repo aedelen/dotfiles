@@ -15,7 +15,7 @@
       userEmail = "aedelen42@gmail.com";
       package = pkgs.gitFull;
       aliases = {
-        tree = "log --oneline --graph --decorate --all";
+        tree = "log --graph --all --format='%Cblue%ae%n %Cgreen%h %Creset%s'";
       };
       extraConfig = {
         init = {
