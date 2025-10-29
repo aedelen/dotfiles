@@ -51,4 +51,5 @@ help () {
 	echo "posting - REST testing"
 	echo "lazygit - git client"
 	echo "musikcube - music player"
+	echo "nm-applet - manage wifi"
 }
