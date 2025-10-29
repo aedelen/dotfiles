@@ -26,8 +26,15 @@ tmux-workspace () {
 		tmux new-window -t "$SESSION_NAME:" -n Node "npm start"
 	fi
 
-	# Just a shell for running commands in
-	tmux new-window -t "$SESSION_NAME:"
+	# If both flake.nix and Makefile exist, create a "make" window running nix develop
+	# otherwise just open empty shell
+	if [[ -f "flake.nix" && -f "makefile" ]]; then
+		tmux new-window -t "$SESSION_NAME:" -n Make "nix develop -c zsh"
+	else
+		# Just a shell for running commands in
+		tmux new-window -t "$SESSION_NAME:"
+	fi
+
 
 	# Ensure we attach to the neovim window (window 1)
 	tmux select-window -t "$SESSION_NAME:1"
