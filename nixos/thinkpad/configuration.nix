@@ -86,6 +86,17 @@
     #media-session.enable = true;
   };
 
+  # Needed to enable screensharinn
+  xdg.portal = {
+    enable = true;
+    # Add the portal for your compositor, e.g.:
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr # For Sway/wlroots
+      # xdg-desktop-portal-gtk # For GNOME
+      # xdg-desktop-portal-kde # For KDE
+    ];
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
