@@ -45,6 +45,7 @@
 
   # Install Jetbrains IDEs
   jetbrainsModule.enable = true;
+
   home.file =
     let
       symlink = config.lib.file.mkOutOfStoreSymlink;
