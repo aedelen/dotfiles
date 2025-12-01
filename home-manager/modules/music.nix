@@ -16,7 +16,7 @@
 
       # Terminal
       cmus
-      moc
+      #moc
       musikcube
 
       rmpc

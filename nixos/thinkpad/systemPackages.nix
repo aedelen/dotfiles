@@ -52,8 +52,8 @@
     matugen # gen theme based on image
     rofi # app launcher
     kanshi # monitor management
-    #syncthingtray
-    pkgs-syncthing.syncthingtray
+    syncthingtray
+    #pkgs-syncthing.syncthingtray
 
     # Clipboard
     wl-clip-persist

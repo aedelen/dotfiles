@@ -2,6 +2,7 @@ local ws_root = "/home/adam/Documents/syncthing/Adam's Stuff/ObsidianVaults/"
 
 require("obsidian").setup({
 	ui = { enable = false },
+	legacy_commands = false,
 
 	-- A list of workspace names, paths, and configuration overrides.
 	-- If you use the Obsidian app, the 'path' of a workspace should generally be

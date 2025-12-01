@@ -11,13 +11,13 @@
   config = lib.mkIf config.gitModule.enable {
     programs.git = {
       enable = true;
-      userName = "Adam Edelen";
-      userEmail = "aedelen42@gmail.com";
       package = pkgs.gitFull;
-      aliases = {
-        tree = "log --graph --all --format='%Cblue%ae %Creset%ch%n %Cgreen%h %Creset%s'";
-      };
-      extraConfig = {
+      settings = {
+        alias = {
+          tree = "log --graph --all --format='%Cblue%ae %Creset%ch%n %Cgreen%h %Creset%s'";
+        };
+        user.name = "Adam Edelen";
+        user.email = "aedelen42@gmail.com";
         init = {
           defaultBranch = "main";
         };
