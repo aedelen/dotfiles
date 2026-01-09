@@ -22,6 +22,11 @@
           defaultBranch = "main";
         };
         credential.helper = "libsecret";
+        url = {
+          "ssh://git@github.com" = {
+            insteadOf = "https://github.com";
+          };
+        };
       };
     };
   };
