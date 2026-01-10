@@ -121,6 +121,7 @@
         "wheel"
         "input"
         "podman"
+        "docker"
       ];
       packages = with pkgs; [
       ];
@@ -180,8 +181,8 @@
   ];
 
   # Enable rootless Docker
-  dockerModule.enable = false;
-  podmanModule.enable = true;
+  dockerModule.enable = true;
+  podmanModule.enable = false;
 
   # Enable Hyprland
   programs.hyprland.enable = true;

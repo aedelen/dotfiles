@@ -18,6 +18,8 @@
       go
       air # Live reload of go apps
       templ
+      gcc
+      goose
     ];
 
     # Enable Neovim
@@ -79,7 +81,7 @@
         vim.lsp.enable('gopls')
         vim.lsp.enable('html')
         vim.lsp.enable('htmx')
-		vim.lsp.enable('templ')
+        vim.lsp.enable('templ')
         -- End of extraLuaConfig --
       '';
 
