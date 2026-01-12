@@ -6,6 +6,7 @@
   config,
   inputs,
   pkgs,
+  pkgs-unstable,
   ...
 }:
 
@@ -142,10 +143,13 @@
   #];
 
   # Install firefox.
+  environment.systemPackages = with pkgs-unstable; [
+    firefoxpwa
+  ];
   programs.firefox = {
     enable = true;
     package = pkgs.firefox;
-    nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
+    nativeMessagingHosts.packages = [ pkgs-unstable.firefoxpwa ];
   };
 
   # Allow unfree packages
