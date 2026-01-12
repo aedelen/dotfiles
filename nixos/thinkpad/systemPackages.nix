@@ -67,5 +67,7 @@
 
     # Utilities
     bitwarden-desktop
+
+    firefoxpwa
   ];
 }

@@ -142,7 +142,11 @@
   #];
 
   # Install firefox.
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
