@@ -11,7 +11,6 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  #environment.systemPackages = [ nixpkgs-syncthingtray.syncthingtray ];
 
   environment.systemPackages = with pkgs; [
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -21,7 +20,6 @@
     vlc
 
     #Keyboard
-    #kanata
     wev # Key id finder
 
     # Development Env
@@ -52,8 +50,8 @@
     matugen # gen theme based on image
     rofi # app launcher
     kanshi # monitor management
-    syncthingtray
-    #pkgs-syncthing.syncthingtray
+    #syncthingtray
+    pkgs-syncthing.syncthingtray
 
     # Clipboard
     wl-clip-persist
