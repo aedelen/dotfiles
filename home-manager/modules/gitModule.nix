@@ -27,6 +27,9 @@
             insteadOf = "https://github.com";
           };
         };
+        core = {
+          editor = "/etc/profiles/per-user/adam/bin/nvim";
+        };
       };
     };
   };
