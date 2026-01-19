@@ -19,6 +19,7 @@
     ../nixosModules/docker.nix
     #<home-manager/nixos>
     ../nixosModules/podman.nix
+    ../nixosModules/chromium.nix
   ];
 
   # Bootloader.
