@@ -28,7 +28,6 @@
     obsidian
     alacritty
     filezilla
-    gitkraken
     ksnip # Screenshot annotations
   ];
 
