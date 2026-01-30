@@ -29,6 +29,7 @@
     alacritty
     filezilla
     gitkraken
+    ksnip # Screenshot annotations
   ];
 
   # Play some games
@@ -45,6 +46,19 @@
 
   # Install Jetbrains IDEs
   jetbrainsModule.enable = true;
+
+  # Set default apps
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "image/png" = "ksnip.desktop";
+    };
+  };
+
+  xdg.desktopEntries.ksnip = {
+    name = "kSnip";
+    exec = "${pkgs.ksnip}/bin/ksnip";
+  };
 
   home.file =
     let

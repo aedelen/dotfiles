@@ -35,6 +35,7 @@
     wget
     curl
     unzip
+    file
 
     # Hyprland
     waybar # system bar
