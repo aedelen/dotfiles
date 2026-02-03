@@ -30,6 +30,9 @@
         core = {
           editor = "/etc/profiles/per-user/adam/bin/nvim";
         };
+        push = {
+          autoSetupRemote = true;
+        };
       };
     };
   };
