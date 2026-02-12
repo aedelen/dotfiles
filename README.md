@@ -15,7 +15,7 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
 [Cleaning the Nix Store](https://nixos.org/manual/nixos/stable/#sec-nix-gc)
 ```bash
 nix-env --list-generations # Lists profile generations
-nixos-rebuild -h list-generations # List NixOS Generations
+nixos-rebuild list-generations # List NixOS Generations
 sudo nix-env --list-generations --profile /nix/var/nix/profiles/system # alt way to list nixos generations
 nix-store --optimise # Removes exact duplicates
 nix-collect-garbage --delete-older-than 10d # might need sudo to clean old builds
