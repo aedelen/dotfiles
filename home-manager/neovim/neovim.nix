@@ -17,9 +17,10 @@
     home.packages = with pkgs; [
       go
       air # Live reload of go apps
-      templ
       gcc
-      goose
+      goose # Database migration tool
+      templ # templating enginete
+      dbeaver-bin # database client
     ];
 
     # Enable Neovim
@@ -117,35 +118,35 @@
               p.tree-sitter-templ
             ])
           );
-          config = ''${builtins.readFile ./treesitter.lua}'';
+          config = "${builtins.readFile ./treesitter.lua}";
           type = "lua";
         }
 
         {
           # https://github.com/nvim-neo-tree/neo-tree.nvim/
           plugin = neo-tree-nvim;
-          config = ''${builtins.readFile ./neo-tree.lua}'';
+          config = "${builtins.readFile ./neo-tree.lua}";
           type = "lua";
         }
 
         {
           # https://github.com/lewis6991/gitsigns.nvim
           plugin = gitsigns-nvim;
-          config = ''${builtins.readFile ./gitsigns.lua}'';
+          config = "${builtins.readFile ./gitsigns.lua}";
           type = "lua";
         }
 
         {
           # https://github.com/nvim-telescope/telescope.nvim
           plugin = telescope-nvim;
-          config = ''${builtins.readFile ./telescope.lua}'';
+          config = "${builtins.readFile ./telescope.lua}";
           type = "lua";
         }
 
         {
           # https://github.com/folke/which-key.nvim/
           plugin = which-key-nvim;
-          config = ''${builtins.readFile ./which-key.lua}'';
+          config = "${builtins.readFile ./which-key.lua}";
           type = "lua";
         }
 
@@ -166,19 +167,19 @@
           # https://github.com/Saghen/blink.cmp
           # https://cmp.saghen.dev/
           plugin = blink-cmp;
-          config = ''${builtins.readFile ./blink-cmp.lua} '';
+          config = "${builtins.readFile ./blink-cmp.lua} ";
           type = "lua";
         }
         {
           # https://github.com/MeanderingProgrammer/render-markdown.nvim/
           plugin = render-markdown-nvim;
-          config = ''${builtins.readFile ./render-markdown-nvim.lua} '';
+          config = "${builtins.readFile ./render-markdown-nvim.lua} ";
           type = "lua";
         }
         (lib.mkIf config.neovimModule.obsidianSupport {
           # https://github.com/obsidian-nvim/obsidian.nvim/
           plugin = obsidian-nvim;
-          config = ''${builtins.readFile ./obsidian-nvim.lua} '';
+          config = "${builtins.readFile ./obsidian-nvim.lua} ";
           type = "lua";
         })
         {
