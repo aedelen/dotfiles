@@ -21,6 +21,7 @@
       goose # Database migration tool
       templ # templating enginete
       dbeaver-bin # database client
+      sqlc # generate database repo code
     ];
 
     # Enable Neovim
