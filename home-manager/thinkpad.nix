@@ -93,7 +93,7 @@
     Service = {
       Type = "oneshot";
       ExecStart = ''
-        ${pkgs.bash}/bin/bash -c "date >> ~/Downloads/nightlyCleanup.log && find ~/Downloads/ -type f -ctime +30 -print >> ~/Downloads/nightlyCleanup.log"
+        ${pkgs.bash}/bin/bash -c "date >> ~/Downloads/nightlyCleanup.log && find ~/Downloads/ -ctime +30 -print -delete >> ~/Downloads/nightlyCleanup.log"
       '';
     };
 
@@ -104,8 +104,10 @@
 
   systemd.user.timers.download-cleanup = {
     Timer = {
-      OnBootSec = "5m";
-      OnUnitActiveSec = "5m";
+      # Run once a day at midnight
+      OnCalendar = "daily";
+      # Ensures the job runs shortly after boot if the computer was off during the scheduled time
+      Persistent = true;
       Unit = "download-cleanup.service";
     };
     Install = {
