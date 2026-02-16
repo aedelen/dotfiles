@@ -74,6 +74,45 @@
       ".npmrc".source = symlink dotfiles + "/node/.npmrc";
     };
 
+  systemd.user.services.download-cleanup = {
+    Unit = {
+      Description = "Clean old files from download folder";
+    };
+
+    # Provide the necessary binaries to the service environment
+    Environment = {
+      PATH =
+        with pkgs;
+        lib.makeBinPath [
+          coreutils-full # for date
+          findutils # for find
+          bash
+        ];
+    };
+
+    Service = {
+      Type = "oneshot";
+      ExecStart = ''
+        ${pkgs.bash}/bin/bash -c "date >> ~/Downloads/nightlyCleanup.log && find ~/Downloads/ -type f -ctime +30 -print >> ~/Downloads/nightlyCleanup.log"
+      '';
+    };
+
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+  };
+
+  systemd.user.timers.download-cleanup = {
+    Timer = {
+      OnBootSec = "5m";
+      OnUnitActiveSec = "5m";
+      Unit = "download-cleanup.service";
+    };
+    Install = {
+      WantedBy = [ "timers.target" ];
+    };
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.11";
 }
