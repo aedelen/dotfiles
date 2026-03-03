@@ -1,6 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   # You can import other home-manager modules here
   imports = [
@@ -79,19 +79,16 @@
       Description = "Clean old files from download folder";
     };
 
-    # Provide the necessary binaries to the service environment
-    Environment = {
-      PATH =
-        with pkgs;
-        lib.makeBinPath [
-          coreutils-full # for date
-          findutils # for find
-          bash
-        ];
-    };
-
     Service = {
       Type = "oneshot";
+      # Provide the necessary binaries to the service environment
+      Environment = [
+        ''PATH=${ lib.makeBinPath [
+            pkgs.coreutils-full # for date
+            pkgs.findutils # for find
+            pkgs.bash
+          ]}''
+      ];
       ExecStart = ''
         ${pkgs.bash}/bin/bash -c "date >> ~/Downloads/nightlyCleanup.log && find ~/Downloads/ -ctime +30 -print -delete >> ~/Downloads/nightlyCleanup.log"
       '';
