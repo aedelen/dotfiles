@@ -58,11 +58,6 @@
     };
   };
 
-  xdg.desktopEntries.ksnip = {
-    name = "kSnip";
-    exec = "${pkgs.ksnip}/bin/ksnip";
-  };
-
   home.file =
     let
       symlink = config.lib.file.mkOutOfStoreSymlink;
