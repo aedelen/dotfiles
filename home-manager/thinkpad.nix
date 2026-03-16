@@ -32,7 +32,7 @@
   ];
 
   # Play some games
-  gamesModule.enable = true;
+  gamesModule.enable = false;
 
   # Enable home-manager
   programs.home-manager.enable = true;
