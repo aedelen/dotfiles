@@ -25,10 +25,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.extraModprobeConfig = ''
-    options iwlwifi swcrypto=1 11n_disable=8 power_save=0 bt_coex_active=Y
-    options iwlmvm power_scheme=1
-  '';
+  # boot.extraModprobeConfig = ''
+  #   options iwlwifi swcrypto=1 11n_disable=8 power_save=0 bt_coex_active=Y
+  #   options iwlmvm power_scheme=1
+  # '';
 
   networking.hostName = "thinkpad"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
