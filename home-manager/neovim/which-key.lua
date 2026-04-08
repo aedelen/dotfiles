@@ -17,5 +17,6 @@ wk.add({
 			require("which-key").show({ global = true })
 		end,
 		desc = "Buffer Local Keymaps (which-key)",
+		mode = {"n","v"},
 	},
 })
