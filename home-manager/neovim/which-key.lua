@@ -11,4 +11,11 @@ wk.add({
 	{ "<leader>t", group = "[T]oggle" },
 	{ "<leader>h", group = "Git [H]unk", mode = { "n", "v" } },
 	{ "<leader>r", group = "[R]est" },
+	{
+		"<leader>?",
+		function()
+			require("which-key").show({ global = true })
+		end,
+		desc = "Buffer Local Keymaps (which-key)",
+	},
 })
