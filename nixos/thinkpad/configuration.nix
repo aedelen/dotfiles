@@ -38,12 +38,28 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [
-    8081
-    8080
-  ];
+  networking = {
+    networkmanager = {
+      enable = true;
+      dns = "none";
+    };
+
+    useDHCP = false;
+    dhcpcd.enable = false;
+
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
+
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        8081
+        8080
+      ];
+    };
+  };
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
