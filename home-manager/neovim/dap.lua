@@ -73,6 +73,26 @@ table.insert(dap.configurations.go, {
 	buildFlags = "-tags=unit", -- Example of a custom config
 })
 
+table.insert(dap.configurations.go, {
+	type = "go",
+	name = "Attach Remote (scoopy-cloud)",
+	request = "attach",
+	mode = "remote",
+	host = "127.0.0.1",
+	port = 2345,
+	substitutePath = {
+		-- Adjust the `from` paths to wherever these live on your laptop.
+		{
+			from = "/home/adam/workspace/scoopy/scoopy-cloud",
+			to = "/workspace/scoopy-cloud",
+		},
+		{
+			from = "/home/adam/workspace/scoopy/scoopy",
+			to = "/workspace/scoopy",
+		},
+	},
+})
+
 -- Keymaps
 wk.add({
 	-- Debugger
