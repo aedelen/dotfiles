@@ -22,6 +22,7 @@
       templ # templating enginete
       dbeaver-bin # database client
       sqlc # generate database repo code
+      delve # debugger for go
     ];
 
     # Enable Neovim
@@ -32,6 +33,7 @@
       vimdiffAlias = true;
 
       extraPackages = with pkgs; [
+        delve
         ripgrep
         fd
         gcc
@@ -97,6 +99,10 @@
         conform-nvim # STYYYYYLE
         lualine-nvim # https://github.com/nvim-lualine/lualine.nvim
         undotree # https://github.com/mbbill/undotree/
+        nvim-dap-go # https://github.com/leoluz/nvim-dap-go/
+        nvim-dap-ui # https://github.com/rcarriga/nvim-dap-ui/
+        nvim-dap-virtual-text # https://github.com/theHamsta/nvim-dap-virtual-text/
+        nvim-nio # https://github.com/nvim-neotest/nvim-nio
 
         {
           # https://github.com/nvim-treesitter/nvim-treesitter/
@@ -194,6 +200,12 @@
             vim.keymap.set("n", "<leader>rl", "<cmd>Rest logs<cr>", { desc = "[R]est [L]ogs" })
             vim.keymap.set("n", "<leader>re", select_env, { desc = "[R]est [E]nviroment" })
           '';
+          type = "lua";
+        }
+        {
+          # https://github.com/mfussenegger/nvim-dap/
+          plugin = nvim-dap;
+          config = "${builtins.readFile ./dap.lua} ";
           type = "lua";
         }
       ];
