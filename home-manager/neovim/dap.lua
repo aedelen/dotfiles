@@ -93,6 +93,18 @@ table.insert(dap.configurations.go, {
 	},
 })
 
+table.insert(dap.configurations.go, {
+    type = "go",
+    name = "Debug Project (with Env)",
+    request = "launch",
+    -- Point this to your main entry point. 
+    -- "." or "${workspaceFolder}" usually works if main.go is in the root.
+    program = "${workspaceFolder}/main.go", 
+    env = {
+        STATIC_RESOURCE_PATH = "../scoopy/static/",
+    },
+})
+
 -- Keymaps
 wk.add({
 	-- Debugger
