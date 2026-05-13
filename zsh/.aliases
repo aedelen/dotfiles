@@ -6,7 +6,7 @@ alias {doc,docs}="cd ~/Documents"
 alias st="cd ~/Documents/syncthing/"
 
 #Common
-alias la="ls -laFh"
+alias la="ls -laFh --group-directories-first"
 alias cls="clear"
 alias printpath="echo \$PATH|tr ':' '\n'"
 alias dfh="duf"
