@@ -9,7 +9,7 @@ output "Acer Technologies XB271HU T4TAA0088502" enable mode 2560x1440@60Hz adapt
 
 profile docked-amos {
 	output "$built-in" {
-		enable 
+		disable
 		position 2560,1080 
 		mode 1920x1080 
 		scale 1.3333334
