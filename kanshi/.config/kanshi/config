@@ -17,11 +17,11 @@ profile docked-amos {
 	output "$external-hp"
 }
 profile docked-home {
-  output "LG Display 0x0521 Unknown" disable
-  output "Acer Technologies XB271HU T4TAA0088502" enable mode 2560x1440@60Hz adaptive_sync on
+  output "$built-in" disable
+  output "$external-acer" enable mode 2560x1440@60Hz adaptive_sync on
 }
 
 profile laptop {
-  output "LG Display 0x0521 Unknown" enable mode 1920x1080 scale 1
+  output "$built-in" enable mode 1920x1080 scale 1
 }
 
