@@ -10,6 +10,7 @@ gsettings set org.gnome.desktop.interface gtk-theme 'Pop'
 gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
 ```
+
 ## NixOS
 ### Nix Store
 [Cleaning the Nix Store](https://nixos.org/manual/nixos/stable/#sec-nix-gc)
@@ -21,3 +22,13 @@ nix-store --optimise # Removes exact duplicates
 nix-collect-garbage --delete-older-than 10d # might need sudo to clean old builds
 nix-collect-garbage -d # Deletes everything not used by current build
 ```
+
+## Hyprland
+### Monitors
+[Hyprland wiki](https://wiki.hypr.land/0.52.0/Configuring/Monitors/)
+[Kanshi](https://gitlab.freedesktop.org/emersion/kanshi)
+```bash
+# List Monitors
+hyprctl monitors all
+```
+
