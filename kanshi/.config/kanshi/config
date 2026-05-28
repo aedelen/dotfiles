@@ -1,4 +1,22 @@
-profile docked {
+output "HP Inc. HP E273q 6CM825117G" {
+	enable
+	alias "$external-hp"
+	position 0,0
+	mode 2560x1440@59.95Hz
+}
+output "LG Display 0x0521 Unknown" disable alias $built-in
+output "Acer Technologies XB271HU T4TAA0088502" enable mode 2560x1440@60Hz adaptive_sync on alias $external-acer
+
+profile docked-amos {
+	output "$built-in" {
+		enable 
+		position 2560,1080 
+		mode 1920x1080 
+		scale 1.3333334
+	}
+	output "$external-hp"
+}
+profile docked-home {
   output "LG Display 0x0521 Unknown" disable
   output "Acer Technologies XB271HU T4TAA0088502" enable mode 2560x1440@60Hz adaptive_sync on
 }
