@@ -152,6 +152,7 @@
       ];
     };
     test = {
+      enable = false;
       isNormalUser = true;
       description = "Test";
       extraGroups = [
