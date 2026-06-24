@@ -53,6 +53,7 @@
     kanshi # monitor management
     #syncthingtray
     pkgs-syncthing.syncthingtray
+    pavucontrol # audio control panel
 
     # Clipboard
     wl-clip-persist
